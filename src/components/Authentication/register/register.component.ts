@@ -34,7 +34,7 @@ export class RegisterComponent {
           registeruser_id: res.id
         };
 
-        this.http.post('http://localhost:3005/users', userDataForUsersTable)
+        this.http.post('http://localhost:3005/auths/usersignup', userDataForUsersTable)
           .subscribe((userRes) => {
             console.log("Registered user: " + userRes);
             this.showSuccess();
