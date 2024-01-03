@@ -33,9 +33,9 @@
 
       <div *ngIf="flname; else loginButtons" class="dropdown me-3">
         <button>
-          <span class="material-icons">
-            Olá, {{ flname }}
-          </span>
+          <p *ngIf="image" class="profiles">
+            <ngx-avatars [src]="image"></ngx-avatars> Olá, {{ flname }}
+          </p>
         </button>
         <div class="dropdown-content">
           <a routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile">Perfil</a>
