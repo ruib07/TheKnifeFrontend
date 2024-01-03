@@ -23,7 +23,7 @@ export class LoginComponent {
   LoginUsers(loginusers: {
     email:string, password:string
   }) {
-    this.http.post('http://localhost:3005/registerusers/login', loginusers)
+    this.http.post('http://localhost:3005/auths/usersignin', loginusers)
       .subscribe((res) => {
         console.log(res);
         this.showSuccess();
