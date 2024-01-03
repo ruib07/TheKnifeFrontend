@@ -1,0 +1,76 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse'
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { AvatarModule } from 'ngx-avatars';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from 'src/components/home/home.component';
+import { RestaurantsPageComponent } from 'src/components/Restaurants/restaurants-page/restaurants-page.component';
+import { RestaurantsPreviewComponent } from 'src/components/Restaurants/restaurants-preview/restaurants-preview.component';
+import { ReservationsComponent } from 'src/components/reservations/reservations.component';
+import { LoginComponent } from 'src/components/Authentication/login/login.component';
+import { RegisterComponent } from 'src/components/Authentication/register/register.component';
+import { RestaurantRegistrationComponent } from 'src/components/Authentication/restaurant-registration/restaurant-registration.component';
+import { FooterComponent } from 'src/components/shared/footer/footer.component';
+import { ClientEditprofileComponent } from 'src/components/Profiles/ClientProfile/client-editprofile/client-editprofile.component';
+import { BookingHistoryComponent } from 'src/components/Profiles/ClientProfile/booking-history/booking-history.component';
+import { ClientReviewsComponent } from 'src/components/Profiles/ClientProfile/client-reviews/client-reviews.component';
+import { MainNavComponent } from 'src/components/shared/navbars/main-nav/main-nav.component';
+import { LoginsNavComponent } from 'src/components/shared/navbars/logins-nav/logins-nav.component';
+import { LoginResponsiblesComponent } from 'src/components/Authentication/login-responsibles/login-responsibles.component';
+import { UserprofileSidenavComponent } from 'src/components/shared/navbars/userprofile-sidenav/userprofile-sidenav.component';
+import { ResponsiblesprofileSidenavComponent } from 'src/components/shared/navbars/responsiblesprofile-sidenav/responsiblesprofile-sidenav.component';
+import { ResponsibleEditprofileComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/responsible-editprofile/responsible-editprofile.component';
+import { RestaurantEditprofileComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-editprofile/restaurant-editprofile.component';
+import { RecoverpasswordResponsibleComponent } from 'src/components/Recover-Passwords/recoverpassword-responsible/recoverpassword-responsible.component';
+import { RecoverpasswordUserComponent } from 'src/components/Recover-Passwords/recoverpassword-user/recoverpassword-user.component';
+import { RecoverpasswordemailUserComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-user/recoverpasswordemail-user.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    MainNavComponent,
+    LoginsNavComponent,
+    UserprofileSidenavComponent,
+    ResponsiblesprofileSidenavComponent,
+    HomeComponent,
+    RestaurantsPageComponent,
+    RestaurantsPreviewComponent,
+    ReservationsComponent,
+    LoginComponent,
+    RegisterComponent,
+    RestaurantRegistrationComponent,
+    LoginResponsiblesComponent,
+    RecoverpasswordResponsibleComponent,
+    RecoverpasswordUserComponent,
+    ClientEditprofileComponent,
+    BookingHistoryComponent,
+    ClientReviewsComponent,
+    ResponsibleEditprofileComponent,
+    RestaurantEditprofileComponent,
+    RecoverpasswordemailUserComponent,
+    FooterComponent
+  ],
+  imports: [
+    BrowserModule,
+    MdbCollapseModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    HttpClientModule,
+    FormsModule,
+    AvatarModule,
+    ToastrModule.forRoot(),
+    CarouselModule.forRoot(),
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

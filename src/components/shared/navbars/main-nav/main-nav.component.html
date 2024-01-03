@@ -1,0 +1,63 @@
+<nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
+  [ngClass]="{'navbar-scroll': isScrolled}">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" (click)="centered.toggle()" aria-controls="navbarCentered"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="material-icons">
+        menu
+      </span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-left ms-5">
+      <a class="navbar-brand ms-2" routerLink="/home" [routerLinkActive]="'active'">
+        <img src="../../../assets/logos/TheKnife-LogoDark.png" />
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-center me-5" mdbCollapse #centered="mdbCollapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="restaurants-page">Restaurantes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacts">Contactos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-us">Sobre Nós</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse form-inline my-2 my-lg-0 me-5">
+      <input class="input-search me-2" type="search" placeholder=" Pesquisar" aria-label="Search" />
+
+      <div *ngIf="flname; else loginButtons" class="dropdown me-3">
+        <button>
+          <span class="material-icons">
+            Olá, {{ flname }}
+          </span>
+        </button>
+        <div class="dropdown-content">
+          <a routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile">Perfil</a>
+          <a (click)="logout()">Sair</a>
+        </div>
+      </div>
+
+      <ng-template #loginButtons>
+        <div class="dropdown me-3">
+          <button>
+            <span class="material-icons">
+              person
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <a routerLink="/Authentication/login">Utilizadores</a>
+            <a routerLink="/Authentication/login-responsibles">Responsáveis</a>
+          </div>
+        </div>
+
+      </ng-template>
+    </div>
+  </div>
+</nav>
+<br><br><br><br><br><br>

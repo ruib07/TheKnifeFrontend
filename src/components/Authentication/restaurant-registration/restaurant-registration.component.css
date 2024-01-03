@@ -1,0 +1,93 @@
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card input,
+.card textarea {
+  background-color: #fafafa;
+  border-style: none;
+}
+
+.form-line1,
+.form-line2,
+.form-line3,
+.form-line4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-line1 input,
+.form-line2 input,
+.form-line3 input,
+.restaurant-desc textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.owner-name,
+.owner-password,
+.owner-phone,
+.ntables,
+.owner-email,
+.restaurant-name,
+.restaurant-phone,
+.restaurant-address,
+.restaurant-category,
+.restaurant-img,
+.capacity,
+.openingdays,
+.openinghours,
+.closinghours,
+.restaurant-desc textarea {
+  margin-bottom: 7px;
+}
+
+.owner-name,
+.owner-email {
+  width: 420px;
+}
+
+.owner-phone,
+.restaurant-phone {
+  width: 250px;
+}
+
+.restaurant-name,
+.owner-password {
+
+  width: 460px;
+}
+
+.restaurant-address {
+  width: 520px;
+}
+
+.ntables {
+  width: 180px;
+}
+
+.capacity {
+  width: 250px;
+}
+
+.openingdays {
+  width: 350px;
+}
+
+.restaurant-desc textarea {
+  height: 30vh;
+}
+
+.btn-enviar {
+  text-align: center;
+}
+
+.btn-enviar button {
+  box-shadow: 5px 5px 5px lightgray;
+  border-radius: 10px;
+}
