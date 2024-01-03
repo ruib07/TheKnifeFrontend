@@ -11,6 +11,7 @@ export class MainNavComponent implements OnInit {
 
   token: string | null = localStorage.getItem('token');
   flname: string | null = localStorage.getItem('flname');
+  image: string | null = localStorage.getItem('image') || '../../../../assets/defaultuser.png';
 
   constructor(private router: Router) { }
 

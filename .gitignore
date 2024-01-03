@@ -41,5 +41,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
-theknife-frontend/theknife-website/node_modules
+node_modules
