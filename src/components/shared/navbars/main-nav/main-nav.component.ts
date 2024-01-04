@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,16 +8,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-nav.component.css']
 })
 export class MainNavComponent implements OnInit {
+  constructor(private router: Router, private http: HttpClient) { }
+
   isScrolled: boolean = false;
-
-  token: string | null = localStorage.getItem('token');
-  flname: string | null = localStorage.getItem('flname');
-  image: string | null = localStorage.getItem('image') || '../../../../assets/defaultuser.png';
-
-  constructor(private router: Router) { }
+  responsavel: any = {};
 
   ngOnInit() {
     this.onWindowScroll();
+    this.getResponsavel();
+  }
+
+  getResponsavel() {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+      this.http.get(`http://localhost:3005/restaurantresponsibles/${this.getUserId()}`, { headers })
+        .subscribe((res: any) => {
+          this.responsavel = res;
+          console.log(res);
+        }, (error) => {
+          console.error('Erro ao obter dados do responsável: ', error);
+        });
+    }
+  }
+
+  getUserId() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const tokenParts = token.split('.');
+      if (tokenParts.length === 3) {
+        const decodedToken = atob(tokenParts[1]);
+        const tokenInfo = JSON.parse(decodedToken);
+        return tokenInfo.id;
+      }
+    }
+    return null;
   }
 
   @HostListener('window:scroll', [])
@@ -26,8 +54,6 @@ export class MainNavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('flname');
-    this.router.navigate(['/Authentication/login-responsibles'])
+    this.router.navigate(['/Authentication/login-responsibles']);
   }
-
 }
