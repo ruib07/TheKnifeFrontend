@@ -24,10 +24,8 @@ export class LoginResponsiblesComponent {
     .subscribe((res: any) => {
       console.log(res);
       const token = res.body.token;
-      const flname = res.body.flname;
       if (token) {
         localStorage.setItem('token', token);
-        localStorage.setItem('flname', flname);
         this.showSuccess();
       } else {
         this.showError();

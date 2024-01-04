@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-restaurant-registration',
@@ -7,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./restaurant-registration.component.css']
 })
 export class RestaurantRegistrationComponent {
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
   showSuccess() {
     this.toastr.success('Registo efetuado com sucesso!');
