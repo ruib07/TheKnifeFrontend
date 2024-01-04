@@ -1,3 +1,53 @@
-<p>
-  responsible-editprofile works!
-</p>
+  <app-profiles-nav></app-profiles-nav>
+
+  <form>
+    <div class="responsible-info">
+      <div class="text-wrapper-3">
+        <h1>O Meu Perfil</h1>
+      </div>
+      <div class="nome-utilizador-2">
+        <h4 class="ms-5">Nome e Apelido</h4>
+      </div>
+      <div class="nome-utilizador">
+        <div class="text-wrapper-2">
+          <input type="text" class="input" placeholder="Nome..." />
+        </div>
+      </div>
+      <div class="email-label">
+        <h4 class="ms-5">Email</h4>
+      </div>
+      <div class="email-input">
+        <div class="email">
+          <input type="email" class="input" placeholder="Email..." />
+        </div>
+      </div>
+      <div class="n-telefone-label">
+        <h4 class="ms-5">Número de Telefone</h4>
+      </div>
+      <div class="n-tele-input">
+        <div class="phone">
+          <input type="tel" class="input" pattern="[2,6,9][0-9]{8}" placeholder="Telefone do Restaurante..." required
+            ngModel />
+        </div>
+      </div>
+      <div class="password-label">
+        <h4 class="ms-5">Palavra-Passe</h4>
+      </div>
+      <div class="password-input">
+        <div class="password">
+          <input type="password" class="input" placeholder="Password..." />
+        </div>
+      </div>
+      <div class="image-label">
+        <h4 class="ms-5">Imagem</h4>
+      </div>
+      <div class="image-input">
+        <div class="image">
+          <input type="text" class="input" placeholder="Imagem URL..." />
+        </div>
+      </div>
+      <div class="submeter">
+        <div class="text-wrapper">Submeter</div>
+      </div>
+    </div>
+  </form>

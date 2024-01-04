@@ -1,0 +1,27 @@
+<nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-collapse">
+      <a class="navbar-brand ms-5" routerLink="/home" [routerLinkActive]="'active'">
+        <img src="../../../../assets/logos/TheKnife-LogoLight.png" />
+      </a>
+
+      <div class="icon-name ms-auto">
+        <div class="dropdown me-3">
+          <button>
+            <p *ngIf="responsavel.image" class="profiles">
+              <ngx-avatars [src]="responsavel.image"></ngx-avatars> Olá, {{ responsavel.flname }}
+            </p>
+            <p *ngIf="!responsavel.image" class="profiles">
+              <img src="../../../../assets/defaultuser.png" alt="Default User Image" class="default-user-image"> Olá, {{
+              responsavel.flname }}
+            </p>
+          </button>
+          <div class="dropdown-content">
+            <a (click)="logout()">Sair</a>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</nav>
+<br><br><br><br><br><br>

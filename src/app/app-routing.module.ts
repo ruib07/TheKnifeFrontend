@@ -10,6 +10,7 @@ import { ClientEditprofileComponent } from 'src/components/Profiles/ClientProfil
 import { ClientReviewsComponent } from 'src/components/Profiles/ClientProfile/client-reviews/client-reviews.component';
 import { ResponsibleEditprofileComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/responsible-editprofile/responsible-editprofile.component';
 import { RestaurantEditprofileComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-editprofile/restaurant-editprofile.component';
+import { RestaurantGraphComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-graph/restaurant-graph.component';
 import { RecoverpasswordResponsibleComponent } from 'src/components/Recover-Passwords/recoverpassword-responsible/recoverpassword-responsible.component';
 import { RecoverpasswordUserComponent } from 'src/components/Recover-Passwords/recoverpassword-user/recoverpassword-user.component';
 import { RecoverpasswordemailUserComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-user/recoverpasswordemail-user.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'Recover-Passwords/recoverpassword-user', component: RecoverpasswordUserComponent},
   { path: 'Recover-Passwords/recoverpasswordemail-user', component: RecoverpasswordemailUserComponent},
   { path: 'Profiles/RestaurantResponsibleProfile/responsible-editprofile', component: ResponsibleEditprofileComponent },
-  { path: 'Profiles/RestaurantResponsibleProfile/restaurant-editprofile', component: RestaurantEditprofileComponent},
+  { path: 'Profiles/RestaurantResponsibleProfile/restaurant-editprofile', component: RestaurantEditprofileComponent },
+  { path: 'Profiles/RestaurantResponsibleProfile/restaurant-graph', component: RestaurantGraphComponent },
   { path: 'reservations', component: ReservationsComponent},
   { path: 'Restaurants/restaurants-page', component: RestaurantsPageComponent},
   { path: 'Restaurants/restaurants-preview', component: RestaurantsPreviewComponent},
