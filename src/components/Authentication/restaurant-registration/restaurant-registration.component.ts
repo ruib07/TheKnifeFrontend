@@ -21,7 +21,7 @@ export class RestaurantRegistrationComponent {
     flname: string, phone: number, email: string,
     password: string, name: string, category: string, desc: string,
     rphone: number, location: string, image: string, numberoftables: number,
-    capacity: number, openingdays: string, openinghours: string, closinghours: string,
+    capacity: number, openingdays: string, averageprice: number, openinghours: string, closinghours: string,
   }) {
     this.http.post('http://localhost:3005/restaurantregistrations', registerrestaurantsresponsibles)
       .subscribe((res: any) => {
@@ -45,6 +45,7 @@ export class RestaurantRegistrationComponent {
               numberoftables: registerrestaurantsresponsibles.numberoftables,
               capacity: registerrestaurantsresponsibles.capacity,
               openingdays: registerrestaurantsresponsibles.openingdays,
+              averageprice: registerrestaurantsresponsibles.averageprice,
               openinghours: registerrestaurantsresponsibles.openinghours,
               closinghours: registerrestaurantsresponsibles.closinghours,
               restaurantregistration_id: res.id,

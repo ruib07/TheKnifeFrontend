@@ -1,15 +1,20 @@
+body {
+  background-color: #f2f2f2;
+}
+
 h2 {
   text-align: center;
   font-weight: bold;
 }
 
 .card {
-  border-radius: 10px;
+  border-radius: 25px;
+  background-color: #d9d9d933;
+  border-style: none;
 }
 
 .card input,
 .card textarea {
-  background-color: #fafafa;
   border-style: none;
 }
 
@@ -41,6 +46,7 @@ h2 {
 .restaurant-img,
 .capacity,
 .openingdays,
+.averageprice,
 .openinghours,
 .closinghours,
 .restaurant-desc textarea {
@@ -75,8 +81,16 @@ h2 {
   width: 250px;
 }
 
+.restaurant-img {
+  width: 420px;
+}
+
 .openingdays {
   width: 350px;
+}
+
+.averageprice {
+  width: 140px;
 }
 
 .restaurant-desc textarea {

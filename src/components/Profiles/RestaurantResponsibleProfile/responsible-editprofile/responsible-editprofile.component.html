@@ -1,6 +1,7 @@
   <app-profiles-nav></app-profiles-nav>
+ <app-responsiblesprofile-sidenav></app-responsiblesprofile-sidenav>
 
-  <form>
+  <form #updateResponsible="ngForm">
     <div class="responsible-info">
       <div class="text-wrapper-3">
         <h1>O Meu Perfil</h1>
@@ -10,7 +11,7 @@
       </div>
       <div class="nome-utilizador">
         <div class="text-wrapper-2">
-          <input type="text" class="input" placeholder="Nome..." />
+          <input type="text" class="input" name="flname" [(ngModel)]="responsavel.flname" required />
         </div>
       </div>
       <div class="email-label">
@@ -18,7 +19,7 @@
       </div>
       <div class="email-input">
         <div class="email">
-          <input type="email" class="input" placeholder="Email..." />
+          <input type="email" class="input" name="email" [(ngModel)]="responsavel.email" required />
         </div>
       </div>
       <div class="n-telefone-label">
@@ -26,8 +27,7 @@
       </div>
       <div class="n-tele-input">
         <div class="phone">
-          <input type="tel" class="input" pattern="[2,6,9][0-9]{8}" placeholder="Telefone do Restaurante..." required
-            ngModel />
+          <input type="tel" class="input" pattern="[2,6,9][0-9]{8}" name="phone" [(ngModel)]="responsavel.phone" required />
         </div>
       </div>
       <div class="password-label">
@@ -35,7 +35,7 @@
       </div>
       <div class="password-input">
         <div class="password">
-          <input type="password" class="input" placeholder="Password..." />
+          <input type="password" class="input" name="password" [(ngModel)]="responsavel.password" required />
         </div>
       </div>
       <div class="image-label">
@@ -43,7 +43,7 @@
       </div>
       <div class="image-input">
         <div class="image">
-          <input type="text" class="input" placeholder="Imagem URL..." />
+          <input type="text" class="input" name="image" [(ngModel)]="responsavel.image" />
         </div>
       </div>
       <div class="submeter">
