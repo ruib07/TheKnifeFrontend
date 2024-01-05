@@ -54,7 +54,7 @@ input {
 
 .submeter .text-wrapper {
   background-color: #1B1B1B;
-  color: white;
+  color: #fff;
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;

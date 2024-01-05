@@ -29,17 +29,22 @@
     </div>
 
     <div class="collapse form-inline my-2 my-lg-0 me-5">
-      <input class="input-search me-2" type="search" placeholder=" Pesquisar" aria-label="Search" />
+      <input class="input-search me-3" type="search" placeholder=" Pesquisar" aria-label="Search" />
 
       <div *ngIf="responsavel.flname; else loginButtons" class="dropdown me-3">
         <button>
-          <p *ngIf="responsavel.image" class="profiles">
-            <ngx-avatars [src]="responsavel.image"></ngx-avatars> Olá, {{ responsavel.flname }}
-          </p>
-          <p *ngIf="!responsavel.image" class="profiles">
-            <img src="../../../../assets/defaultuser.png" alt="Default User Image" class="default-user-image"> Olá, {{
-            responsavel.flname }}
-          </p>
+          <div *ngIf="responsavel.image" class="profiles">
+            <figure>
+              <ngx-avatars [src]="responsavel.image"></ngx-avatars>
+            </figure>
+            <p>Olá, {{ responsavel.flname }} </p>
+          </div>
+          <div *ngIf="!responsavel.image" class="profiles">
+            <figure>
+              <img src="../../../../assets/defaultuser.png  " alt="Default User Image" class="default-user-image">
+            </figure>
+            <p>Olá, {{ responsavel.flname }}</p>
+          </div>
         </button>
         <div class="dropdown-content">
           <a routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile">Perfil</a>

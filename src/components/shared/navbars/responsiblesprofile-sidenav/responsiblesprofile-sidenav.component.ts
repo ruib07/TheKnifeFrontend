@@ -12,4 +12,5 @@ export class ResponsiblesprofileSidenavComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }
