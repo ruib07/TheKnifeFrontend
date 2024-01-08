@@ -20,29 +20,65 @@ import { HomeComponent } from 'src/components/home/home.component';
 import { ReservationsComponent } from 'src/components/reservations/reservations.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
-  { path: 'Authentication/restaurant-registration', component: RestaurantRegistrationComponent },
-  { path: 'Authentication/login-responsibles', component: LoginResponsiblesComponent },
-  { path: 'Authentication/login', component: LoginComponent},
-  { path: 'Authentication/register', component: RegisterComponent},
-  { path: 'Profiles/ClientProfile/client-editprofile', component: ClientEditprofileComponent },
-  { path: 'Profiles/ClientProfile/booking-history', component: BookingHistoryComponent },
-  { path: 'Profiles/ClientProfile/client-reviews', component: ClientReviewsComponent },
-  { path: 'Recover-Passwords/recoverpassword-responsible', component: RecoverpasswordResponsibleComponent },
-  { path: 'Recover-Passwords/recoverpassword-user', component: RecoverpasswordUserComponent},
-  { path: 'Recover-Passwords/recoverpasswordemail-user', component: RecoverpasswordemailUserComponent},
-  { path: 'Profiles/RestaurantResponsibleProfile/responsible-editprofile', component: ResponsibleEditprofileComponent },
-  { path: 'Profiles/RestaurantResponsibleProfile/restaurant-editprofile', component: RestaurantEditprofileComponent },
-  { path: 'Profiles/RestaurantResponsibleProfile/restaurant-graph', component: RestaurantGraphComponent },
-  { path: 'reservations', component: ReservationsComponent},
-  { path: 'Restaurants/restaurants-page', component: RestaurantsPageComponent},
-  { path: 'Restaurants/restaurants-preview', component: RestaurantsPreviewComponent},
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'Authentication/restaurant-registration',
+    component: RestaurantRegistrationComponent,
+  },
+  {
+    path: 'Authentication/login-responsibles',
+    component: LoginResponsiblesComponent,
+  },
+  { path: 'Authentication/login', component: LoginComponent },
+  { path: 'Authentication/register', component: RegisterComponent },
+  {
+    path: 'Profiles/ClientProfile/client-editprofile',
+    component: ClientEditprofileComponent,
+  },
+  {
+    path: 'Profiles/ClientProfile/booking-history',
+    component: BookingHistoryComponent,
+  },
+  {
+    path: 'Profiles/ClientProfile/client-reviews',
+    component: ClientReviewsComponent,
+  },
+  {
+    path: 'Recover-Passwords/recoverpassword-responsible',
+    component: RecoverpasswordResponsibleComponent,
+  },
+  {
+    path: 'Recover-Passwords/recoverpassword-user',
+    component: RecoverpasswordUserComponent,
+  },
+  {
+    path: 'Recover-Passwords/recoverpasswordemail-user',
+    component: RecoverpasswordemailUserComponent,
+  },
+  {
+    path: 'Profiles/RestaurantResponsibleProfile/responsible-editprofile',
+    component: ResponsibleEditprofileComponent,
+  },
+  {
+    path: 'Profiles/RestaurantResponsibleProfile/restaurant-editprofile',
+    component: RestaurantEditprofileComponent,
+  },
+  {
+    path: 'Profiles/RestaurantResponsibleProfile/restaurant-graph',
+    component: RestaurantGraphComponent,
+  },
+  { path: 'reservations', component: ReservationsComponent },
+  { path: 'Restaurants/restaurants-page', component: RestaurantsPageComponent },
+  {
+    path: 'Restaurants/restaurants-preview',
+    component: RestaurantsPreviewComponent,
+  },
 
-  { path: '**', redirectTo: 'home'}
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
