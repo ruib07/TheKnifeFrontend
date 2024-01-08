@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent {
 
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
   showSuccess() {
     this.toastr.success('Registo efetuado com sucesso!');

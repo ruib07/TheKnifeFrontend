@@ -20,17 +20,22 @@ export class LoginComponent {
   }
 
 
-  LoginUsers(loginusers: {
+  LoginUsers(loginusers: { 
     email:string, password:string
   }) {
-    this.http.post('http://localhost:3005/auths/usersignin', loginusers)
-      .subscribe((res) => {
-        console.log(res);
+    this.http.post('http://localhost:3005/auths/usersignin', loginusers, { observe: 'response' })
+      .subscribe((res: any) => {
+        const usertoken = res.body.usertoken;
+      if (usertoken) {
+        localStorage.setItem('usertoken', usertoken);
         this.showSuccess();
-      },
-        (error) => {
-          console.log(error);
-          this.showError();
-      });
-  }
+      } else {
+        this.showError();
+      }
+  },
+  (error) => {
+    console.error('Erro ao efetuar login: ', error);
+    this.showError();
+  });
+}
 }
