@@ -13,9 +13,12 @@ export class MainNavComponent implements OnInit {
   isScrolled: boolean = false;
   responsavel: any = {};
 
+  user: any = {};
+
   ngOnInit() {
     this.onWindowScroll();
     this.getResponsavel();
+    this.getUtilizador();
   }
 
   getResponsavel() {
@@ -55,5 +58,39 @@ export class MainNavComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/Authentication/login-responsibles']);
+  }
+
+  getUtilizador() {
+    const usertoken = localStorage.getItem('usertoken');
+
+    if (usertoken) {
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${usertoken}`);
+
+      this.http.get(`http://localhost:3005/users/${this.getUtilizadorId()}`, { headers })
+        .subscribe((res: any) => {
+          this.user = res;
+          console.log(res);
+        }, (error) => {
+          console.error('Erro ao obter dados do utilizador: ', error);
+        });
+    }
+  }
+
+  getUtilizadorId() {
+    const usertoken = localStorage.getItem('usertoken');
+    if (usertoken) {
+      const usertokenParts = usertoken.split('.');
+      if (usertokenParts.length === 3) {
+        const userdecodedToken = atob(usertokenParts[1]);
+        const usertokenInfo = JSON.parse(userdecodedToken);
+        return usertokenInfo.id;
+      }
+    }
+    return null;
+  }
+
+  logoutuser() {
+    localStorage.removeItem('usertoken');
+    this.router.navigate(['/Authentication/login']);
   }
 }
