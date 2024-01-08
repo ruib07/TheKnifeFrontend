@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-responsiblesprofile-sidenav',
   templateUrl: './responsiblesprofile-sidenav.component.html',
   styleUrls: ['./responsiblesprofile-sidenav.component.css']
 })
-export class ResponsiblesprofileSidenavComponent implements OnInit {
+export class ResponsiblesprofileSidenavComponent {
 
-  constructor() { }
+  constructor(private router: Router  ) { }
 
-  ngOnInit() {
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/Authentication/login-responsibles']);
   }
 
 
