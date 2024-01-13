@@ -1,11 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  OnInit,
-} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -14,8 +8,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./restaurant-editprofile.component.css'],
 })
 export class RestaurantEditprofileComponent implements OnInit {
+  restaurants: any[] = [];
+
   constructor(
-    private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
     private el: ElementRef
@@ -47,23 +42,84 @@ export class RestaurantEditprofileComponent implements OnInit {
 
   getRestaurant() {
     const token = localStorage.getItem('token');
+    const responsibleId = this.getResponsibleId();
 
-    if (token) {
+    if (token && responsibleId) {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
+      this.http.get(`http://localhost:3005/restaurants`, { headers }).subscribe(
+        (res: any) => {
+          const filteredRestaurant = res.find(
+            (restaurant: any) => restaurant.rresponsible_id === responsibleId
+          );
+
+          if (!filteredRestaurant) {
+            console.error('Restaurante não encontrado!');
+            return;
+          }
+
+          this.restaurant = filteredRestaurant;
+          console.log(filteredRestaurant);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+  }
+
+  updateRestaurantInfo(restaurantRes: {
+    name: string;
+    category: string;
+    desc: string;
+    rphone: number;
+    location: string;
+    image: string;
+    numberoftables: number;
+    capacity: number;
+    openingdays: string;
+    averageprice: number;
+    openinghours: string;
+    closinghours: string;
+  }) {
+    const token = localStorage.getItem('token');
+    const responsibleId = this.getResponsibleId();
+
+    if (token && responsibleId) {
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+      const restaurantId = this.restaurant.id;
+
+      if (!restaurantId) {
+        console.error('ID do restaurante não encontrado.');
+        return;
+      }
+
+      if (this.restaurant.rresponsible_id !== responsibleId) {
+        console.error('Não tem permissão para atualizar este restaurante.');
+        return;
+      }
+
       this.http
-        .get(`http://localhost:3005/restaurants/${this.getRestaurantId()}`, {
-          headers,
-        })
+        .put(
+          `http://localhost:3005/restaurants/${restaurantId}`,
+          restaurantRes,
+          {
+            headers,
+          }
+        )
         .subscribe(
           (res: any) => {
-            this.restaurant = res;
             console.log(res);
             this.setStyle('');
             this.showSuccess();
+
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
           },
           (error) => {
-            console.error('Erro ao obter dados do restaurante: ', error);
+            console.error('Erro ao atualizar restaurante:', error);
             this.setStyle('1px solid #D00000');
             this.showError();
           }
@@ -71,7 +127,7 @@ export class RestaurantEditprofileComponent implements OnInit {
     }
   }
 
-  getRestaurantId() {
+  getResponsibleId() {
     const token = localStorage.getItem('token');
     if (token) {
       const tokenParts = token.split('.');

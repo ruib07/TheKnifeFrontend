@@ -66,6 +66,10 @@ input {
   margin-left: 84px !important;
 }
 
+.restaurant-image {
+  text-align: center;
+}
+
 .nome-restaurante-label,
 .submeter {
   margin-top: 30px;
