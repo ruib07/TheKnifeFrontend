@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userprofile-sidenav',
   templateUrl: './userprofile-sidenav.component.html',
   styleUrls: ['./userprofile-sidenav.component.css']
 })
-export class UserprofileSidenavComponent implements OnInit {
+export class UserprofileSidenavComponent {
 
-  constructor() { }
+  constructor(private router: Router  ) { }
 
-  ngOnInit() {
+
+  logoutuser() {
+    localStorage.removeItem('usertoken');
+    this.router.navigate(['/Authentication/login']);
   }
-
 }
