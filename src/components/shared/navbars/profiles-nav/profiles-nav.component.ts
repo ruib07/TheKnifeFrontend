@@ -60,7 +60,7 @@ export class ProfilesNavComponent implements OnInit {
     if (usertoken) {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${usertoken}`);
 
-      this.http.get(`http://localhost:3005/users/${this.getUserId()}`, { headers })
+      this.http.get(`http://localhost:3005/users/${this.getutilizadorId()}`, { headers })
         .subscribe((res: any) => {
           this.user = res;
           console.log(res);

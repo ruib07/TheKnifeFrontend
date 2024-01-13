@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent {
 
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router, private el: ElementRef) { }
 
   showSuccess() {
     this.toastr.success('Login Efetuado com sucesso!');
@@ -29,13 +30,30 @@ export class LoginComponent {
       if (usertoken) {
         localStorage.setItem('usertoken', usertoken);
         this.showSuccess();
+        this.setStyle('');
+        this.router.navigate(['/Profiles/ClientProfile/client-editprofile']);
       } else {
         this.showError();
       }
   },
   (error) => {
     console.error('Erro ao efetuar login: ', error);
+    this.setStyle('1px solid #D00000');
     this.showError();
   });
+}
+
+private setStyle(style: string) {
+  const emailInput = this.el.nativeElement.querySelector('[name="email"]');
+  const passwordInput =
+    this.el.nativeElement.querySelector('[name="password"]');
+
+  if (emailInput) {
+    emailInput.style.border = style;
+  }
+
+  if (passwordInput) {
+    passwordInput.style.border = style;
+  }
 }
 }

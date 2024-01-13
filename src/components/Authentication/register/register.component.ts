@@ -39,6 +39,7 @@ export class RegisterComponent {
           .subscribe((userRes) => {
             console.log("Registered user: " + userRes);
             this.showSuccess();
+            this.router.navigate(['/Authentication/login/']);
           });
       },
         (error) => {
