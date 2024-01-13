@@ -100,6 +100,10 @@ export class ResponsibleEditprofileComponent implements OnInit {
               });
             this.setStyle('');
             this.showSuccess();
+
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
           },
           (error) => {
             console.error(error);
