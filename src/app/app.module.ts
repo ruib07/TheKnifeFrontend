@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse'
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { AvatarModule } from 'ngx-avatars';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from 'src/components/home/home.component';
@@ -60,12 +61,13 @@ import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav
     RestaurantEditprofileComponent,
     RestaurantGraphComponent,
     RecoverpasswordemailUserComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     MdbCollapseModule,
     AppRoutingModule,
+    [FontAwesomeModule],
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
@@ -73,8 +75,9 @@ import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav
     AvatarModule,
     ToastrModule.forRoot(),
     CarouselModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

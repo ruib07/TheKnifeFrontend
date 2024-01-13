@@ -15,7 +15,7 @@ body {
   padding: 20px;
   background-color: #d9d9d933;
   border-radius: 25px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: auto;
 }
 
@@ -61,6 +61,34 @@ input {
   font-weight: bold;
   width: 30%;
   margin: auto;
+}
+
+.eyeicon {
+  position: relative;
+  right: 30px;
+  cursor: pointer;
+}
+
+.responsibleimage {
+  width: 300px;
+  margin: 20px 0;
+}
+
+.responsibleimage img {
+  width: 70%;
+  border-radius: 50%;
+  display: block;
+}
+
+.text-wrapper-3 {
+  text-align: center;
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.text-wrapper-3 h1 {
+  margin-right: 10px;
 }
 
 h1 {

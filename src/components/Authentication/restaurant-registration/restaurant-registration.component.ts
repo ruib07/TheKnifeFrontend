@@ -2,18 +2,30 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-restaurant-registration',
   templateUrl: './restaurant-registration.component.html',
   styleUrls: ['./restaurant-registration.component.css'],
 })
 export class RestaurantRegistrationComponent {
+  eyeIcon = faEye;
+  eyeIconSlash = faEyeSlash;
+  visible: boolean = true;
+  changetype: boolean = true;
+
   constructor(
     private http: HttpClient,
     private toastr: ToastrService,
     private router: Router,
     private el: ElementRef
   ) {}
+
+  viewpassword() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
+  }
 
   showSuccess() {
     this.toastr.success('Registo efetuado com sucesso!', 'Sucesso', {
