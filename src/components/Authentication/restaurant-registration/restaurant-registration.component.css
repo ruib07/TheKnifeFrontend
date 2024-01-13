@@ -105,3 +105,10 @@ h2 {
   box-shadow: 5px 5px 5px lightgray;
   border-radius: 10px;
 }
+
+.eyeicon {
+  position: absolute;
+  top: 40px;
+  right: 350px;
+  cursor: pointer;
+}

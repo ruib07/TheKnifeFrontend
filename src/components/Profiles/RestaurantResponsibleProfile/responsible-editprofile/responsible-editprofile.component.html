@@ -7,7 +7,10 @@
 >
   <div class="responsible-info">
     <div class="text-wrapper-3">
-      <h1>O Meu Perfil</h1>
+      <div class="responsibleimage ms-2">
+        <img [src]="responsavel.image" />
+      </div>
+      <h1 class="ms-5">O Meu Perfil</h1>
     </div>
     <div class="nome-utilizador-2">
       <h4 class="ms-5">Nome e Apelido</h4>
@@ -58,12 +61,15 @@
     <div class="password-input">
       <div class="password">
         <input
-          type="password"
+          [type]="changetype ? 'password' : 'text'"
           class="input"
           name="password"
           [(ngModel)]="responsavel.password"
           required
         />
+        <span class="eyeicon" (click)="viewpassword()">
+          <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+        </span>
       </div>
     </div>
     <div class="image-label">

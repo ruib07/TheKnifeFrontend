@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ContentChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-responsible-editprofile',
@@ -9,6 +10,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./responsible-editprofile.component.css'],
 })
 export class ResponsibleEditprofileComponent implements OnInit {
+  eyeIcon = faEye;
+  eyeIconSlash = faEyeSlash;
+  visible: boolean = true;
+  changetype: boolean = true;
+
   constructor(
     private router: Router,
     private http: HttpClient,
@@ -20,6 +26,11 @@ export class ResponsibleEditprofileComponent implements OnInit {
 
   ngOnInit() {
     this.getResponsavel();
+  }
+
+  viewpassword() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
   }
 
   showSuccess() {
@@ -48,7 +59,7 @@ export class ResponsibleEditprofileComponent implements OnInit {
 
       this.http
         .get(
-          `http://localhost:3005/restaurantresponsibles/${this.getUserId()}`,
+          `http://localhost:3005/restaurantresponsibles/${this.getResponsibleId()}`,
           { headers }
         )
         .subscribe(
@@ -77,27 +88,13 @@ export class ResponsibleEditprofileComponent implements OnInit {
 
       this.http
         .put(
-          `http://localhost:3005/restaurantresponsibles/${this.getUserId()}`,
+          `http://localhost:3005/restaurantresponsibles/${this.getResponsibleId()}`,
           updateResponsible,
           { headers }
         )
         .subscribe(
           (res: any) => {
             console.log(res);
-            const updateForResponsibleRestaurantRes = {
-              flname: updateResponsible.flname,
-              phone: updateResponsible.phone,
-              email: updateResponsible.email,
-              password: updateResponsible.password,
-            };
-            this.http
-              .put(
-                `http://localhost:3005/restaurantregistrations/${this.getUserId()}`,
-                updateForResponsibleRestaurantRes
-              )
-              .subscribe((res: any) => {
-                console.log(res);
-              });
             this.setStyle('');
             this.showSuccess();
 
@@ -114,7 +111,7 @@ export class ResponsibleEditprofileComponent implements OnInit {
     }
   }
 
-  getUserId() {
+  getResponsibleId() {
     const token = localStorage.getItem('token');
     if (token) {
       const tokenParts = token.split('.');

@@ -2,6 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login-responsibles',
@@ -9,12 +10,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-responsibles.component.css'],
 })
 export class LoginResponsiblesComponent {
+  eyeIcon = faEye;
+  eyeIconSlash = faEyeSlash;
+  visible: boolean = true;
+  changetype: boolean = true;
+
   constructor(
     private http: HttpClient,
     private toastr: ToastrService,
     private router: Router,
     private el: ElementRef
   ) {}
+
+  viewpassword() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
+  }
 
   showSuccess() {
     this.toastr.success('Login Efetuado com sucesso!', 'Sucesso', {

@@ -78,11 +78,17 @@
 }
 
 .forgotpassword-link,
-.forgotpassword-p,
-.savesession {
+.forgotpassword-p {
   color: #fff;
 }
 
 .forgot-remember {
-  display: inline-flex;
+  text-align: start;
+}
+
+.eyeicon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
 }
