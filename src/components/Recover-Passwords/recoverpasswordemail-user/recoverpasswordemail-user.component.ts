@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recoverpasswordemail-user',
@@ -7,37 +9,39 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./recoverpasswordemail-user.component.css']
 })
 export class RecoverpasswordemailUserComponent {
-  userEmail: string = '';
-  emailExists: boolean | undefined; // Variável para armazenar se o email existe na base de dados
 
-  constructor(private http: HttpClient) {}
+  existingEmail: string = '';  // Initialize the property
 
-  async checkEmailValidity(): Promise<void> {
-    if (this.userEmail) {
-      try {
-        const response = await this.http.get<any>(`http://localhost:3005/registerusers?email=${this.userEmail}`).toPromise();
+  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
-        if (response && response.exists !== undefined) {
-          this.emailExists = response.exists;
+  showSuccess() {
+    this.toastr.success('Email confirmado com sucesso!');
+  }
 
-          if (this.emailExists) {
-            console.log('Email existe na base de dados');
+  showError() {
+    this.toastr.error('O Email não existe!');
+  }
 
+  getRecoverPasswordemailUser() {
+    console.log(this.existingEmail);
+
+    const url = 'http://localhost:3005/registerusers/confirm-email/' + this.existingEmail;
+
+    this.http.get(url)
+      .subscribe(
+        (res: any) => {
+          console.log(res);
+          if (res.message) {
+            this.showSuccess();
+            this.router.navigate(['/Recover-Passwords/recoverpassword-user'], { queryParams: { email: this.existingEmail } });
           } else {
-            console.log('Email não existe na base de dados');
-
+            this.showError();
           }
-        } else {
-          console.log('Resposta inválida do servidor');
-
+        },
+        (error) => {
+          console.error(error);
+          this.showError();
         }
-      } catch (error) {
-        console.error('Erro ao verificar o email:', error);
-        // Tratar erro
-      }
-    } else {
-      console.log('Email inválido');
-
-    }
+      );
   }
 }

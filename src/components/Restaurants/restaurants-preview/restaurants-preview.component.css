@@ -1,0 +1,468 @@
+.footer1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-gray-100);
+  }
+  .theknife- {
+    margin: 0;
+  }
+  .theknife-todos-container {
+    position: absolute;
+    top: 44.76%;
+    left: 5.31%;
+    font-size: var(--header-2-size);
+  }
+  .icbaseline-facebook-icon,
+  .mdiinstagram-icon,
+  .mdilinkedin-icon {
+    position: absolute;
+    height: 13.99%;
+    width: 2.5%;
+    top: 26.57%;
+    right: 92.19%;
+    bottom: 59.44%;
+    left: 5.31%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .mdiinstagram-icon,
+  .mdilinkedin-icon {
+    right: 89%;
+    left: 8.5%;
+  }
+  .mdilinkedin-icon {
+    right: 85.81%;
+    left: 11.69%;
+  }
+  .sobre-ns-contactos-container {
+    position: absolute;
+    top: 15.03%;
+    left: 44.69%;
+    text-align: center;
+  }
+  .geraltheknifept-351-253-container {
+    position: absolute;
+    top: 22.38%;
+    left: 80.31%;
+    text-align: right;
+  }
+  .footer {
+    position: absolute;
+    top: 2859px;
+    left: 0;
+    width: 1600px;
+    height: 286px;
+    overflow: hidden;
+  }
+  .rpreview-details {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 var(--br-6xl) var(--br-6xl);
+    background-color: rgba(229, 229, 229, 0.2);
+  }
+  .escrever-avaliao {
+    position: absolute;
+    height: 2.17%;
+    width: 32.49%;
+    top: 93.98%;
+    right: 33.67%;
+    bottom: 3.85%;
+    left: 33.84%;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gold);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    box-sizing: border-box;
+  }
+  .restaurant-page-card-child {
+    position: absolute;
+    height: 10.31%;
+    width: 83.12%;
+    top: 81.74%;
+    right: 8.35%;
+    bottom: 7.95%;
+    left: 8.52%;
+    border-radius: var(--br-6xl);
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .descreva-a-sua {
+    position: absolute;
+    height: 0.77%;
+    width: 16.29%;
+    top: 82.95%;
+    left: 10.3%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pontuao1 {
+    position: relative;
+    font-weight: 500;
+  }
+  .arrow-drop-down-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  .pontuao {
+    height: 2.41%;
+    width: 15.61%;
+    top: 78.37%;
+    right: 75.86%;
+    bottom: 19.22%;
+    left: 8.52%;
+    border-radius: 7px;
+    background-color: var(--color-white);
+    flex-direction: row;
+    padding: var(--padding-3xs);
+    box-sizing: border-box;
+    gap: 10px;
+    text-align: center;
+    font-size: var(--body-2-size);
+  }
+  .deixe-a-sua,
+  .mais-avaliaes,
+  .pontuao {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .deixe-a-sua {
+    height: 1.35%;
+    width: 49.37%;
+    top: 76.06%;
+    left: 25.4%;
+    font-size: var(--heading-6-size);
+    font-weight: 600;
+    text-align: center;
+  }
+  .mais-avaliaes {
+    height: 2.17%;
+    width: 32.49%;
+    top: 69.08%;
+    right: 33.67%;
+    bottom: 28.76%;
+    left: 33.84%;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gold);
+    flex-direction: row;
+    padding: var(--padding-3xs);
+    box-sizing: border-box;
+  }
+  .avaliao-card-child,
+  .avaliao-card-item {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--br-6xl);
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .avaliao-card-item {
+    height: 28.04%;
+    width: 6.09%;
+    top: 12.15%;
+    right: 91.37%;
+    bottom: 59.81%;
+    left: 2.54%;
+    border-radius: var(--br-11xl);
+    object-fit: cover;
+  }
+  .gonalo-silva {
+    position: absolute;
+    height: 13.08%;
+    width: 16.24%;
+    top: 10.75%;
+    left: 10.15%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  .de-novembro-de {
+    height: 8.88%;
+    width: 19.59%;
+    top: 26.17%;
+    left: 10.15%;
+    font-size: var(--body-3-size);
+  }
+  .de-novembro-de,
+  .div,
+  .lorem-ipsum-dolor1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  .lorem-ipsum-dolor1 {
+    height: 29.91%;
+    width: 94.92%;
+    top: 53.74%;
+    left: 2.54%;
+    font-size: var(--card-paragraphs-size);
+  }
+  .div {
+    height: 13.08%;
+    width: 3.76%;
+    top: 13.55%;
+    left: 93.71%;
+    font-weight: 600;
+  }
+  .avaliao-card,
+  .avaliao-card1 {
+    height: 10.31%;
+    width: 83.12%;
+    right: 8.35%;
+    left: 8.52%;
+  }
+  .avaliao-card {
+    position: absolute;
+    top: 56.84%;
+    bottom: 32.85%;
+    font-size: var(--heading-6-size);
+  }
+  .avaliao-card1 {
+    top: 45.57%;
+    bottom: 44.12%;
+  }
+  .avaliaes,
+  .avaliao-card1,
+  .avaliao-card2 {
+    position: absolute;
+    font-size: var(--heading-6-size);
+  }
+  .avaliao-card2 {
+    height: 10.31%;
+    width: 83.12%;
+    top: 34.3%;
+    right: 8.35%;
+    bottom: 55.39%;
+    left: 8.52%;
+  }
+  .avaliaes {
+    height: 1.35%;
+    width: 10.55%;
+    top: 31.55%;
+    left: 44.73%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  .restaurant-page-card-item {
+    position: absolute;
+    height: 23.21%;
+    width: 40.93%;
+    top: 2.41%;
+    right: 8.44%;
+    bottom: 74.38%;
+    left: 50.63%;
+    border-radius: var(--br-6xl);
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .reservar1 {
+    position: relative;
+    letter-spacing: -0.02em;
+  }
+  .here-at-il,
+  .reservar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  .reservar {
+    height: 2.12%;
+    width: 15.61%;
+    top: 23.53%;
+    right: 67.43%;
+    bottom: 74.35%;
+    left: 16.96%;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gray-100);
+    flex-direction: row;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    box-sizing: border-box;
+    font-size: var(--header-2-size);
+    color: var(--color-white);
+  }
+  .here-at-il {
+    height: 6.17%;
+    width: 32.49%;
+    top: 15.46%;
+    left: 8.52%;
+  }
+  .fechados-txt {
+    width: 100%;
+  }
+  .fechados,
+  .preo-mdio-25,
+  .segunda-sexta-container {
+    position: absolute;
+    height: 1.54%;
+    top: 12.76%;
+    display: flex;
+    align-items: center;
+  }
+  .fechados {
+    width: 17.13%;
+    left: 24.14%;
+    white-space: pre-wrap;
+  }
+  .preo-mdio-25,
+  .segunda-sexta-container {
+    width: 10.04%;
+    left: 8.52%;
+  }
+  .preo-mdio-25 {
+    height: 1.01%;
+    width: 12.07%;
+    top: 10.79%;
+    font-size: var(--body-3-size);
+  }
+  .r-dom-paio {
+    height: 1.35%;
+    width: 30.38%;
+    top: 8.48%;
+    font-size: var(--body-2-size);
+    font-weight: 500;
+    color: inherit;
+    text-decoration: none;
+  }
+  .comida-italiana,
+  .il-gusto-italiano,
+  .r-dom-paio {
+    position: absolute;
+    left: 8.52%;
+    display: flex;
+    align-items: center;
+  }
+  .il-gusto-italiano {
+    height: 1.73%;
+    width: 22.19%;
+    top: 4.82%;
+    font-size: var(--heading-5-size);
+    font-weight: 600;
+  }
+  .comida-italiana {
+    height: 1.45%;
+    width: 16.54%;
+    top: 2.41%;
+    font-size: var(--header-2-size);
+  }
+  .restaurant-page-card {
+    position: absolute;
+    top: 683px;
+    left: 207px;
+    width: 1185px;
+    height: 2026px;
+    font-size: var(--card-paragraphs-size);
+    color: var(--color-black);
+  }
+  .restaurant-img-icon {
+    position: absolute;
+    top: 111px;
+    left: 0;
+    width: 1600px;
+    height: 572px;
+    object-fit: cover;
+  }
+  .person-icon {
+    position: absolute;
+    top: 30px;
+    left: 1496px;
+    width: 50px;
+    height: 50px;
+  }
+  .restaurantes1 {
+    position: absolute;
+    top: 45px;
+    left: 406px;
+    font-size: var(--header-2-size);
+    letter-spacing: -0.02em;
+  }
+  .contactos1,
+  .sobre-ns1 {
+    position: absolute;
+    top: 42px;
+    left: 773px;
+    font-weight: 600;
+  }
+  .contactos1 {
+    left: 608px;
+  }
+  .logo-lightmode-1-icon {
+    position: absolute;
+    top: 7px;
+    left: 44px;
+    width: 103px;
+    height: 96px;
+    object-fit: cover;
+  }
+  .pesquisar,
+  .search-icon {
+    position: relative;
+  }
+  .search-icon {
+    width: 29.88px;
+    height: 30px;
+  }
+  .pesquisar-parent {
+    position: absolute;
+    top: 29px;
+    left: 981px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    width: 412px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-3xs);
+    box-sizing: border-box;
+    gap: var(--gap-267xl);
+    font-size: var(--card-paragraphs-size);
+    color: var(--color-gray-200);
+  }
+  .nav-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1600px;
+    height: 111px;
+    font-size: var(--heading-6-size);
+  }
+  .restaurant-preview {
+    position: relative;
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 3145px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--body-3-size);
+    color: var(--color-white);
+    font-family: var(--heading-5);
+  }
