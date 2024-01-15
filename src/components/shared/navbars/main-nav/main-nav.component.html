@@ -1,5 +1,4 @@
-<nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
-  [ngClass]="{'navbar-scroll': isScrolled}">
+<nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" [ngClass]="{'navbar-scroll': isScrolled}">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" (click)="centered.toggle()" aria-controls="navbarCentered"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -31,35 +30,24 @@
     <div class="collapse form-inline my-2 my-lg-0 me-5">
       <input class="input-search me-3" type="search" placeholder=" Pesquisar" aria-label="Search" />
 
-      <div *ngIf="responsavel.flname || user.username; else loginButtons" class="dropdown me-3">
+      <div *ngIf="(responsavel?.flname || user?.username) && (responsavel?.image || user?.image); else loginButtons" class="dropdown me-3">
         <button>
-          <div *ngIf="responsavel.image || user.image" class="profiles">
+          <div class="profiles">
             <figure>
-              <ngx-avatars *ngIf="responsavel.image" [src]="responsavel.image"></ngx-avatars>
-              <img *ngIf="!responsavel.image && user.image" [src]="user.image" alt="User Image" class="default-user-image">
+              <ngx-avatars *ngIf="responsavel?.image" [src]="responsavel.image"></ngx-avatars>
+              <img *ngIf="!responsavel?.image && user?.image" [src]="user?.image" alt="User Image" class="default-user-image">
             </figure>
-            <figure>
-              <ngx-avatars *ngIf="user.image" [src]="responsavel.image"></ngx-avatars>
-              <img *ngIf="!user.image" [src]="user.image" alt="User Image" class="default-user-image">
-            </figure>
-            <p>Olá, {{ responsavel.flname || user.username }}</p>
-          </div>
-          <div *ngIf="!(responsavel.image || user.image)" class="profiles">
-            <figure>
-              <img src="../../../../assets/defaultuser.png" alt="Default User Image" class="default-user-image">
-            </figure>
-            <p>Olá, {{ responsavel.flname || user.username }}</p>
+            <p>Olá, {{ responsavel?.flname || user?.username }}</p>
           </div>
         </button>
       
-        <div *ngIf="!(responsavel.image || user.image)" class="dropdown-content">
-          <a *ngIf="responsavel.flname" routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile">Perfil</a>
-          <a *ngIf="user.username" routerLink="/Profiles/ClientProfile/client-editprofile">Perfil</a>
-          <a *ngIf="responsavel.flname" (click)="logout()">Sair</a>
-          <a *ngIf="user.username" (click)="logoutuser()">Sair</a>
+        <div class="dropdown-content">
+          <a *ngIf="responsavel?.flname" routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile">Perfil</a>
+          <a *ngIf="user?.username" routerLink="/Profiles/ClientProfile/client-editprofile">Perfil</a>
+          <a *ngIf="responsavel?.flname" (click)="logout()">Sair</a>
+          <a *ngIf="user?.username" (click)="logoutuser()">Sair</a>
         </div>
       </div>
-      
 
       <ng-template #loginButtons>
         <div class="dropdown me-3">
@@ -73,7 +61,6 @@
             <a routerLink="/Authentication/login-responsibles">Responsáveis</a>
           </div>
         </div>
-
       </ng-template>
     </div>
   </div>
