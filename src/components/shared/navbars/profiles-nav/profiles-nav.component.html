@@ -13,10 +13,6 @@
                 <ngx-avatars *ngIf="responsavel && responsavel.image" [src]="responsavel.image"></ngx-avatars>
                 <img *ngIf="!responsavel.image && user.image" [src]="user.image" alt="User Image" class="default-user-image">
               </figure>
-              <figure>
-                <ngx-avatars *ngIf="user && user.image" [src]="user.image"></ngx-avatars>
-                <img *ngIf="!user.image" [src]="user.image" alt="User Image" class="default-user-image">
-              </figure>
               <p>Olá, {{ (responsavel && responsavel.flname) || (user && user.username) }}</p>
             </div>
             <div *ngIf="!(responsavel && responsavel.image) && !(user && user.image)" class="profiles">
