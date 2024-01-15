@@ -1,19 +1,35 @@
-<nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" [ngClass]="{'navbar-scroll': isScrolled}">
+<nav
+  id="mainNavbar"
+  class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
+  [ngClass]="{ 'navbar-scroll': isScrolled }"
+>
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" (click)="centered.toggle()" aria-controls="navbarCentered"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="material-icons">
-        menu
-      </span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="centered.toggle()"
+      aria-controls="navbarCentered"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="material-icons"> menu </span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-left ms-5">
-      <a class="navbar-brand ms-2" routerLink="/home" [routerLinkActive]="'active'">
+      <a
+        class="navbar-brand ms-2"
+        routerLink="/home"
+        [routerLinkActive]="'active'"
+      >
         <img src="../../../assets/logos/TheKnife-LogoDark.png" />
       </a>
     </div>
 
-    <div class="collapse navbar-collapse justify-content-center me-5" mdbCollapse #centered="mdbCollapse">
+    <div
+      class="collapse navbar-collapse justify-content-center me-5"
+      mdbCollapse
+      #centered="mdbCollapse"
+    >
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" routerLink="restaurants-page">Restaurantes</a>
@@ -28,41 +44,62 @@
     </div>
 
     <div class="collapse form-inline my-2 my-lg-0 me-5">
-      <input class="input-search me-3" type="search" placeholder=" Pesquisar" aria-label="Search" />
+      <input
+        class="input-search me-3"
+        type="search"
+        placeholder=" Pesquisar"
+        aria-label="Search"
+      />
 
-      <div *ngIf="(responsavel?.flname || user?.username) && (responsavel?.image || user?.image); else loginButtons" class="dropdown me-3">
-        <button>
-          <div class="profiles">
-            <figure>
-              <ngx-avatars *ngIf="responsavel?.image" [src]="responsavel.image"></ngx-avatars>
-              <img *ngIf="!responsavel?.image && user?.image" [src]="user?.image" alt="User Image" class="default-user-image">
-            </figure>
-            <p>Olá, {{ responsavel?.flname || user?.username }}</p>
-          </div>
-        </button>
-      
-        <div class="dropdown-content">
-          <a *ngIf="responsavel?.flname" routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile">Perfil</a>
-          <a *ngIf="user?.username" routerLink="/Profiles/ClientProfile/client-editprofile">Perfil</a>
-          <a *ngIf="responsavel?.flname" (click)="logout()">Sair</a>
-          <a *ngIf="user?.username" (click)="logoutuser()">Sair</a>
-        </div>
-      </div>
-
-      <ng-template #loginButtons>
+      <ng-container *ngIf="responsavel.flname || user.username">
         <div class="dropdown me-3">
           <button>
-            <span class="material-icons">
-              person
-            </span>
+            <div class="profiles">
+              <figure>
+                <ngx-avatars
+                  *ngIf="responsavel.image"
+                  [src]="responsavel.image"
+                ></ngx-avatars>
+                <img
+                  *ngIf="!responsavel.image && user.image"
+                  [src]="user?.image"
+                  alt="User Image"
+                  class="default-user-image"
+                />
+              </figure>
+              <p>Olá, {{ responsavel.flname || user.username }}</p>
+            </div>
+          </button>
+
+          <div class="dropdown-content">
+            <a
+              *ngIf="responsavel.flname"
+              routerLink="/Profiles/RestaurantResponsibleProfile/responsible-editprofile"
+              >Perfil</a
+            >
+            <a
+              *ngIf="user.username"
+              routerLink="/Profiles/ClientProfile/client-editprofile"
+              >Perfil</a
+            >
+            <a *ngIf="responsavel.flname" (click)="logout()">Sair</a>
+            <a *ngIf="user.username" (click)="logoutuser()">Sair</a>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!(responsavel.flname || user.username)">
+        <div class="dropdown me-3">
+          <button>
+            <span class="material-icons"> person </span>
           </button>
           <div class="dropdown-content">
             <a routerLink="/Authentication/login">Utilizadores</a>
             <a routerLink="/Authentication/login-responsibles">Responsáveis</a>
           </div>
         </div>
-      </ng-template>
+      </ng-container>
     </div>
   </div>
 </nav>
-<br><br><br><br><br><br>
+<br /><br /><br /><br /><br /><br />

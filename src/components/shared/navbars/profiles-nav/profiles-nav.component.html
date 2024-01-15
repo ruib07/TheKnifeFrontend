@@ -1,34 +1,76 @@
-<nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav
+  id="mainNavbar"
+  class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
+>
   <div class="container-fluid">
     <div class="navbar-collapse">
-      <a class="navbar-brand ms-5" routerLink="/home" [routerLinkActive]="'active'">
+      <a
+        class="navbar-brand ms-5"
+        routerLink="/home"
+        [routerLinkActive]="'active'"
+      >
         <img src="../../../../assets/logos/TheKnife-LogoLight.png" />
       </a>
 
       <div class="icon-name ms-auto">
         <div class="dropdown me-3">
           <button>
-            <div *ngIf="(responsavel && responsavel.image) || (user && user.image)" class="profiles">
+            <div
+              *ngIf="(responsavel && responsavel.image) || (user && user.image)"
+              class="profiles"
+            >
               <figure>
-                <ngx-avatars *ngIf="responsavel && responsavel.image" [src]="responsavel.image"></ngx-avatars>
-                <img *ngIf="!responsavel.image && user.image" [src]="user.image" alt="User Image" class="default-user-image">
+                <ngx-avatars
+                  *ngIf="responsavel && responsavel.image"
+                  [src]="responsavel.image"
+                ></ngx-avatars>
+                <img
+                  *ngIf="!responsavel.image && user.image"
+                  [src]="user.image"
+                  alt="User Image"
+                  class="default-user-image"
+                />
               </figure>
-              <p>Olá, {{ (responsavel && responsavel.flname) || (user && user.username) }}</p>
+              <p>
+                Olá,
+                {{
+                  (responsavel && responsavel.flname) || (user && user.username)
+                }}
+              </p>
             </div>
-            <div *ngIf="!(responsavel && responsavel.image) && !(user && user.image)" class="profiles">
+            <div
+              *ngIf="
+                !(responsavel && responsavel.image) && !(user && user.image)
+              "
+              class="profiles"
+            >
               <figure>
-                <img src="../../../../assets/defaultuser.png" alt="Default User Image" class="default-user-image">
+                <img
+                  src="../../../../assets/defaultuser.png"
+                  alt="Default User Image"
+                  class="default-user-image"
+                />
               </figure>
-              <p>Olá, {{ (responsavel && responsavel.flname) || (user && user.username) }}</p>
+              <p>
+                Olá,
+                {{
+                  (responsavel && responsavel.flname) || (user && user.username)
+                }}
+              </p>
             </div>
           </button>
-          <div class="dropdown-content">
-            <a *ngIf="responsavel && responsavel.flname" (click)="logout()">Sair</a>
-            <a *ngIf="user && user.username" (click)="logoutuser()">Sair</a>
+          <div
+            *ngIf="responsavel && responsavel.flname"
+            class="dropdown-content"
+          >
+            <a (click)="logout()">Sair</a>
+          </div>
+          <div *ngIf="user && user.username" class="dropdown-content">
+            <a (click)="logoutuser()">Sair</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </nav>
-<br><br><br><br><br><br>
+<br /><br /><br /><br /><br /><br />
