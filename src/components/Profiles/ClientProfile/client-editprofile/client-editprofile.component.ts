@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-client-editprofile',
@@ -17,6 +17,11 @@ export class ClientEditprofileComponent implements OnInit {
     private http: HttpClient,
     private toastr: ToastrService,
     private el: ElementRef  ) {}
+
+  eyeIcon = faEye;
+  eyeIconSlash = faEyeSlash;
+  visible: boolean = true;
+  changetype: boolean = true;
 
   user: any = {};
 
@@ -40,6 +45,11 @@ export class ClientEditprofileComponent implements OnInit {
       positionClass: 'toast-bottom-right',
       timeOut: 5000,
     });
+  }
+
+  viewpassworduser() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
   }
 
   getUtilizador() {
@@ -98,6 +108,9 @@ export class ClientEditprofileComponent implements OnInit {
               )
               .subscribe((res: any) => {
                 console.log(res);
+                setTimeout(() => {
+                  window.location.reload();
+                }, 3000);
               });
             this.setStyle('');
             this.showSuccess();

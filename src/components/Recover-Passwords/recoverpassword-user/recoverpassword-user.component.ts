@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-recoverpassword-user',
@@ -19,6 +20,11 @@ export class RecoverpasswordUserComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  eyeIcon = faEye;
+  eyeIconSlash = faEyeSlash;
+  visible: boolean = true;
+  changetype: boolean = true;
+
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.existingEmail = params['email'];
@@ -27,11 +33,31 @@ export class RecoverpasswordUserComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Password alterada com sucesso!');
+    this.toastr.success('Password alterada com sucesso!', 'Sucesso', {
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      timeOut: 5000,
+    });
   }
 
   showError() {
-    this.toastr.error('A Password não foi alterada!');
+    this.toastr.error('A Password não foi alterada!', 'Erro', {
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      timeOut: 5000,
+    });
+  }
+
+  viewrecovernewpassword() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
+  }
+
+  viewrecoverconfirmnewpassword() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
   }
 
   sendRecoverPasswordUser(recoverPasswordUser: {

@@ -15,11 +15,21 @@ export class RecoverpasswordemailUserComponent {
   constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
   showSuccess() {
-    this.toastr.success('Email confirmado com sucesso!');
+    this.toastr.success('Email confirmado com sucesso!', 'Sucesso', {
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      timeOut: 5000,
+    });
   }
 
   showError() {
-    this.toastr.error('O Email não existe!');
+    this.toastr.error('O Email não Existe!', 'Erro', {
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      timeOut: 5000,
+    });
   }
 
   getRecoverPasswordemailUser() {
