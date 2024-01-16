@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AvatarModule } from 'ngx-avatars';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from 'src/components/home/home.component';
@@ -35,6 +36,8 @@ import { RecoverpasswordUserComponent } from 'src/components/Recover-Passwords/r
 import { RecoverpasswordemailUserComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-user/recoverpasswordemail-user.component';
 import { RestaurantGraphComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-graph/restaurant-graph.component';
 import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav/profiles-nav.component';
+import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-responsavel/recoverpasswordemail-responsavel.component';
+import { RestaurantsFiltersComponent } from 'src/components/shared/navbars/restaurants-filters/restaurants-filters.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav
     ProfilesNavComponent,
     UserprofileSidenavComponent,
     ResponsiblesprofileSidenavComponent,
+    RestaurantsFiltersComponent,
     HomeComponent,
     RestaurantsPageComponent,
     RestaurantsPreviewComponent,
@@ -61,6 +65,7 @@ import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav
     RestaurantEditprofileComponent,
     RestaurantGraphComponent,
     RecoverpasswordemailUserComponent,
+    RecoverpasswordemailResponsavelComponent,
     FooterComponent,
   ],
   imports: [
@@ -76,6 +81,7 @@ import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav
     ToastrModule.forRoot(),
     CarouselModule.forRoot(),
     FontAwesomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

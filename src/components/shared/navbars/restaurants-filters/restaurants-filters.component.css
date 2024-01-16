@@ -1,0 +1,11 @@
+ .navbar {
+   border-radius: 25px;
+   width: 90%;
+   justify-content: space-between;
+   position: fixed;
+ }
+
+ .btn-link {
+  text-decoration: none;
+  color: #000;
+ }

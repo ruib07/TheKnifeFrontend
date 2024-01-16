@@ -8,14 +8,17 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-recoverpassword-user',
   templateUrl: './recoverpassword-user.component.html',
-  styleUrls: ['./recoverpassword-user.component.css']
+  styleUrls: ['./recoverpassword-user.component.css'],
 })
 export class RecoverpasswordUserComponent implements OnInit {
-
   existingEmail: string = '';
 
-  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router, private route: ActivatedRoute) { 
-  }
+  constructor(
+    private http: HttpClient,
+    private toastr: ToastrService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   eyeIcon = faEye;
   eyeIconSlash = faEyeSlash;
@@ -23,12 +26,12 @@ export class RecoverpasswordUserComponent implements OnInit {
   changetype: boolean = true;
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.existingEmail = params['email'];
       console.log(this.existingEmail);
     });
   }
-  
+
   showSuccess() {
     this.toastr.success('Password alterada com sucesso!', 'Sucesso', {
       progressBar: true,
@@ -58,20 +61,26 @@ export class RecoverpasswordUserComponent implements OnInit {
   }
 
   sendRecoverPasswordUser(recoverPasswordUser: {
-    newPassword: string, confirmNewPassword: string,
+    newPassword: string;
+    confirmNewPassword: string;
   }) {
     console.log(recoverPasswordUser);
-    console.log(this.existingEmail)
-    this.http.put(`http://localhost:3005/registerusers/${this.existingEmail}/updatepassword`, recoverPasswordUser)
-      .subscribe((res) => {
-        console.log(res);
-        this.showSuccess();
-        this.router.navigate(['/Authentication/login']);
-      },
+    console.log(this.existingEmail);
+    this.http
+      .put(
+        `http://localhost:3005/registerusers/${this.existingEmail}/updatepassword`,
+        recoverPasswordUser
+      )
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this.showSuccess();
+          this.router.navigate(['/Authentication/login']);
+        },
         (error) => {
           console.error('Erro ao efetuar a alteração de password: ', error);
           this.showError();
-      })
+        }
+      );
   }
 }
-
