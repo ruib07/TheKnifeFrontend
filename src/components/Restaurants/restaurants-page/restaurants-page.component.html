@@ -1,3 +1,35 @@
-<p>
-  restaurants-page works!
-</p>
+<app-main-nav></app-main-nav>
+<app-restaurants-filters></app-restaurants-filters>
+
+<div *ngFor="let restaurant of restaurants" class="restaurants-cards">
+  <div class="restaurant-card" (click)="goToRestaurantPreview(restaurant.id)">
+    <img [src]="restaurant.image" class="restaurant-image" />
+    <div class="restaurant-details">
+      <p class="category">{{ restaurant.category }}</p>
+      <p class="name">{{ restaurant.name }}</p>
+      <p class="location">{{ restaurant.location }}</p>
+      <p class="average-price">Preço médio: {{ restaurant.averageprice }}€</p>
+      <p class="description">{{ restaurant.desc }}</p>
+    </div>
+  </div>
+</div>
+<br /><br />
+
+<hr />
+<br />
+
+<div class="app-registration">
+  <div class="app ms-5">
+    <h4>App TheKnife</h4>
+    <p>Brevemente disponível</p>
+  </div>
+  <div class="restaurant-registration me-5">
+    <h4>Interessado em registar o seu restaurante?</h4>
+    <div class="restaurantregistration-content">
+      <a routerLink="/Authentication/restaurant-registration"
+        ><b>Clique aqui</b></a
+      >
+      <p>para registar o seu restaurante</p>
+    </div>
+  </div>
+</div>
