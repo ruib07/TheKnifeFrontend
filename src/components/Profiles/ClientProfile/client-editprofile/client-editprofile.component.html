@@ -11,13 +11,7 @@
     </div>
     <div class="nome-utilizador">
       <div class="text-wrapper-2">
-        <input
-          type="text"
-          class="input"
-          name="username"
-          [(ngModel)]="user.username"
-          required
-        />
+        <input type="text" class="input" name="username" [(ngModel)]="user.username" required />
       </div>
     </div>
     <div class="email-label">
@@ -25,13 +19,7 @@
     </div>
     <div class="email-input">
       <div class="email">
-        <input
-          type="email"
-          class="input"
-          name="email"
-          [(ngModel)]="user.email"
-          required
-        />
+        <input type="email" class="input" name="email" [(ngModel)]="user.email" required />
       </div>
     </div>
     <div class="password-label">
@@ -39,13 +27,11 @@
     </div>
     <div class="password-input">
       <div class="password">
-        <input
-          type="password"
-          class="input"
-          name="password"
-          [(ngModel)]="user.password"
-          required
-        />
+        <input [type]="changetype ? 'password' : 'text'" class="input" name="password" [(ngModel)]="user.password"
+          required />
+        <span class="eyeicon" (click)="viewpassworduser()">
+          <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+        </span>
       </div>
     </div>
     <div class="image-label">
@@ -53,12 +39,7 @@
     </div>
     <div class="image-input">
       <div class="image">
-        <input
-          type="text"
-          class="input"
-          name="image"
-          [(ngModel)]="user.image"
-        />
+        <input type="text" class="input" name="image" [(ngModel)]="user.image" />
       </div>
     </div>
     <div class="submeter">
