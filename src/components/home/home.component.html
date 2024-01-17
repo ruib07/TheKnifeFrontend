@@ -1,33 +1,45 @@
 <app-main-nav></app-main-nav>
 
 <div class="div">
-
   <carousel>
     <slide>
-      <img src="assets/Carrousel-HomePage/Restaurante1.jpeg" alt="first slide" style="display: block; width: 100%;">
+      <img
+        src="assets/Carrousel-HomePage/Restaurante1.jpeg"
+        alt="first slide"
+        style="display: block; width: 100%"
+      />
     </slide>
     <slide>
-      <img src="assets/Carrousel-HomePage/Restaurante2.jpeg" alt="second slide" style="display: block; width: 100%;">
+      <img
+        src="assets/Carrousel-HomePage/Restaurante2.jpeg"
+        alt="second slide"
+        style="display: block; width: 100%"
+      />
     </slide>
     <slide>
-      <img src="assets/Carrousel-HomePage/Restaurante3.jpeg" alt="third slide" style="display: block; width: 100%;">
+      <img
+        src="assets/Carrousel-HomePage/Restaurante3.jpeg"
+        alt="third slide"
+        style="display: block; width: 100%"
+      />
     </slide>
   </carousel>
 
   <div class="div-9">
-
     <div class="titulo">Contactos</div>
 
     <!-- Início Morada/Fale connosco -->
-    <div class="div-83">
+    <div class="div-83" id="contacts">
       <div class="div-84">
         <div class="column-8">
           <div class="div-85 flex-start">
             <div class="div-86">
               <div class="div-87 flex-start">
-                <img loading="lazy"
+                <img
+                  loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/a1205f92057e6601b047718c039b866b8127e3ea8ad902fb5b2fb63c7e2eba4b?"
-                  class="img-15" />
+                  class="img-15"
+                />
 
                 <div class="div-88">
                   <div class="contacto">Morada</div>
@@ -37,13 +49,14 @@
                     4564-767 Braga
                   </div>
                 </div>
-
               </div>
 
               <div class="div-91">
-                <img loading="lazy"
+                <img
+                  loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/c90328f394a06ac6c77fd3a4202748c49cf54bfbb2d4e160df96f2106e3da8d6?"
-                  class="img-16" />
+                  class="img-16"
+                />
                 <div class="div-92">
                   <div class="contacto">Email</div>
                   <div class="div-94"><p>geral&#64;theknife.pt</p></div>
@@ -51,9 +64,11 @@
               </div>
 
               <div class="div-95">
-                <img loading="lazy"
+                <img
+                  loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/1be2b311d3925c1f2adf2c744dbc6ce43a7ae7c0ed38be3d729c1848a1e49aa9?"
-                  class="img-17" />
+                  class="img-17"
+                />
                 <div class="div-96">
                   <div class="contacto">Contacto</div>
                   <div class="div-98">+351 253 453 565</div>
@@ -61,71 +76,124 @@
               </div>
 
               <div class="div-99">
-                <img loading="lazy"
+                <img
+                  loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ef8c3b570cf3e3e4e6f044fdccdd646e94c25a614f9ef3b024032faddf40256?"
-                  class="img-18" />
-                <img loading="lazy"
+                  class="img-18"
+                />
+                <img
+                  loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/31479c63ee15253098467758a2c1ec94366450d1e0748b1f5a45ff1dcfd6d80f?"
-                  class="img-19" />
-                <img loading="lazy"
+                  class="img-19"
+                />
+                <img
+                  loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/e831fea3718982241f6ab37c529a99b1809d7585b0a69b1a325d5a85d1cecbbd?"
-                  class="img-20" />
+                  class="img-20"
+                />
               </div>
             </div>
-            <br>
+            <br />
 
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.9657933924223!2d-8.481503424833257!3d41.439963871293244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24f7138c8f549b%3A0x355bd243ad2eeddf!2sIPCA%20Famalic%C3%A3o!5e0!3m2!1spt-PT!2spt!4v1703185793226!5m2!1spt-PT!2spt"
-              width="580" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              width="580"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
         <div class="form-conatiner">
-          <form #ContactsForm="ngForm" class="div-100" (ngSubmit)="sendContact(ContactsForm.value)">
+          <form
+            #ContactsForm="ngForm"
+            class="div-100"
+            (ngSubmit)="sendContact(ContactsForm.value)"
+          >
             <fieldset>
               <div class="div-101">
                 <div class="div-102">Fale connosco</div>
                 <div class="div-103">
                   Preencha este formulário para nos contactar.
                 </div>
-                <input type="text" id="name" name="name" class="nome" placeholder="Nome *" required
-                  ngModel>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="nome"
+                  placeholder="Nome *"
+                  required
+                  ngModel
+                />
                 <label for="nome"></label>
 
-                <input type="email" id="email" name="email" class="email" placeholder="Email *" required
-                  ngModel>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="email"
+                  placeholder="Email *"
+                  required
+                  ngModel
+                />
                 <label for="email"></label>
 
-                <input type="tel" id="phoneNumber" name="phoneNumber" class="telemovel" placeholder="Telemóvel *"
-                  required ngModel>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  class="telemovel"
+                  placeholder="Telemóvel *"
+                  required
+                  ngModel
+                />
                 <label for="telefone"></label>
 
-                <input type="text" id="subject" name="subject" class="assunto" placeholder="Assunto *" required
-                  ngModel>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="assunto"
+                  placeholder="Assunto *"
+                  required
+                  ngModel
+                />
                 <label for="assunto"></label>
 
-                <textarea id="message" name="message" class="mensagem" rows="12" placeholder="Mensagem *" required
-                  ngModel></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="mensagem"
+                  rows="12"
+                  placeholder="Mensagem *"
+                  required
+                  ngModel
+                ></textarea>
                 <label for="mensagem"></label>
 
                 <button type="submit" class="botao">Enviar</button>
+                <div id="aboutus"></div>
               </div>
             </fieldset>
           </form>
         </div>
       </div>
     </div>
-    <br>
+    <br />
     <!-- Fim Morada/Fale connosco -->
 
     <div class="titulo">Sobre Nós</div>
 
     <div class="div-111">
-      O The Knife reúne as opiniões, notas e comentários de milhares de clientes, para que saiba tudo sobre cada
-      restaurante, e permite-lhe reservar mesa online em segundos, a qualquer hora, com confirmação imediata e sem
-      perder tempo nem dinheiro com chamadas telefónicas.<br /><br />
-      Encontre os restaurantes ideais para reunir família e amigos, para sofisticados almoços de negócios ou alegres
-      refeições comemorativas, para grupos e noites animadas ou para um jantar romântico a dois.<br />
+      O The Knife reúne as opiniões, notas e comentários de milhares de
+      clientes, para que saiba tudo sobre cada restaurante, e permite-lhe
+      reservar mesa online em segundos, a qualquer hora, com confirmação
+      imediata e sem perder tempo nem dinheiro com chamadas telefónicas.<br /><br />
+      Encontre os restaurantes ideais para reunir família e amigos, para
+      sofisticados almoços de negócios ou alegres refeições comemorativas, para
+      grupos e noites animadas ou para um jantar romântico a dois.<br />
     </div>
 
     <div class="titulo">É proprietário de um restaurante?</div>
@@ -134,35 +202,42 @@
     <div class="div-113">
       <div class="div-114">
         <div class="column-10">
-          <img src="../../assets/HomePage-Images/RestaurantRegistrationImg.jpeg" />
+          <img
+            src="../../assets/HomePage-Images/RestaurantRegistrationImg.jpeg"
+          />
         </div>
         <div class="column-11">
           <div class="tabela">
             <div class="sub-titulo-2">Registe o seu restaurante</div>
 
             <div class="texto">
-              Dê-nos mais informações sobre si e iremos entrar em contacto consigo o mais breve possível.
+              Dê-nos mais informações sobre si e iremos entrar em contacto
+              consigo o mais breve possível.
             </div>
 
-            <a routerLink="/Authentication/restaurant-registration" class="botao">Ver mais informações</a>
+            <a
+              routerLink="/Authentication/restaurant-registration"
+              class="botao"
+              >Ver mais informações</a
+            >
 
             <div class="linha"></div>
 
             <div class="sub-titulo-2">Já é cliente</div>
 
             <div class="texto">
-              Inicie sessão para conseguir gerir o seu restaurante no nosso website.
+              Inicie sessão para conseguir gerir o seu restaurante no nosso
+              website.
             </div>
 
-            <a routerLink="/Authentication/login-responsibles" class="botao">Iniciar Sessão</a>
+            <a routerLink="/Authentication/login-responsibles" class="botao"
+              >Iniciar Sessão</a
+            >
           </div>
         </div>
-
       </div>
-
     </div>
     <!-- Fim Cliente / Registo -->
-
   </div>
-  <br><br>
+  <br /><br />
 </div>

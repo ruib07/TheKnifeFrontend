@@ -37,7 +37,6 @@ import { RecoverpasswordemailUserComponent } from 'src/components/Recover-Passwo
 import { RestaurantGraphComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-graph/restaurant-graph.component';
 import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav/profiles-nav.component';
 import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-responsavel/recoverpasswordemail-responsavel.component';
-import { RestaurantsFiltersComponent } from 'src/components/shared/navbars/restaurants-filters/restaurants-filters.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +46,6 @@ import { RestaurantsFiltersComponent } from 'src/components/shared/navbars/resta
     ProfilesNavComponent,
     UserprofileSidenavComponent,
     ResponsiblesprofileSidenavComponent,
-    RestaurantsFiltersComponent,
     HomeComponent,
     RestaurantsPageComponent,
     RestaurantsPreviewComponent,
