@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class RestaurantsPageComponent implements OnInit {
   restaurants: any = {};
+  numberOfPeople: number = 0;
+  selectedTime: string = '';
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -26,6 +28,67 @@ export class RestaurantsPageComponent implements OnInit {
         console.error('Erro ao obter restaurantes: ', error);
       }
     );
+  }
+
+  filtrarPorHora() {
+    if (this.selectedTime && this.restaurants.length > 0) {
+      const selectedHour = new Date(`2000-01-01T${this.selectedTime}`);
+
+      const validRestaurants = this.restaurants.filter((restaurant: any) => {
+        const openingHour = new Date(`2000-01-01T${restaurant.openinghours}`);
+        const closingHour = new Date(`2000-01-01T${restaurant.closinghours}`);
+
+        return selectedHour >= openingHour && selectedHour <= closingHour;
+      });
+
+      if (validRestaurants.length > 0) {
+        this.restaurants = validRestaurants;
+      } else {
+        this.restaurants = [];
+      }
+    } else {
+      window.location.reload();
+    }
+  }
+
+  filtrarPorCapacidade() {
+    if (this.numberOfPeople > 0) {
+      this.restaurants = this.restaurants.filter(
+        (a: any) => a.capacity >= this.numberOfPeople
+      );
+    } else {
+      window.location.reload();
+    }
+  }
+
+  pesquisar(event: any) {
+    const nomeRestaurante: string = event.target.value;
+
+    if (nomeRestaurante) {
+      const nome = nomeRestaurante.toUpperCase();
+
+      this.restaurants = this.restaurants.filter(
+        (a: any) => a.name.toUpperCase().indexOf(nome) >= 0
+      );
+    } else {
+      window.location.reload();
+    }
+  }
+
+  sortRestaurantsPriceAsc(): void {
+    this.restaurants.sort((a: any, b: any) => a.averageprice - b.averageprice);
+  }
+
+  sortRestaurantsPriceDesc(): void {
+    this.restaurants.sort((a: any, b: any) => b.averageprice - a.averageprice);
+  }
+
+  sortRestaurantsNameAZ(): void {
+    this.restaurants.sort((a: any, b: any) => a.name.localeCompare(b.name));
+  }
+
+  sortRestaurantsNameZA(): void {
+    this.restaurants.sort((a: any, b: any) => b.name.localeCompare(a.name));
   }
 
   goToRestaurantPreview(restaurantId: number) {

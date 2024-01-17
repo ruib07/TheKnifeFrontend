@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.css']
+  styleUrls: ['./main-nav.component.css'],
 })
 export class MainNavComponent implements OnInit {
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) {}
 
   isScrolled: boolean = false;
   responsavel: any = {};
@@ -27,13 +27,20 @@ export class MainNavComponent implements OnInit {
     if (token) {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-      this.http.get(`http://localhost:3005/restaurantresponsibles/${this.getUserId()}`, { headers })
-        .subscribe((res: any) => {
-          this.responsavel = res;
-          console.log(res);
-        }, (error) => {
-          console.error('Erro ao obter dados do responsável: ', error);
-        });
+      this.http
+        .get(
+          `http://localhost:3005/restaurantresponsibles/${this.getUserId()}`,
+          { headers }
+        )
+        .subscribe(
+          (res: any) => {
+            this.responsavel = res;
+            console.log(res);
+          },
+          (error) => {
+            console.error('Erro ao obter dados do responsável: ', error);
+          }
+        );
     }
   }
 
@@ -64,15 +71,24 @@ export class MainNavComponent implements OnInit {
     const usertoken = localStorage.getItem('usertoken');
 
     if (usertoken) {
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${usertoken}`);
+      const headers = new HttpHeaders().set(
+        'Authorization',
+        `Bearer ${usertoken}`
+      );
 
-      this.http.get(`http://localhost:3005/users/${this.getUtilizadorId()}`, { headers })
-        .subscribe((res: any) => {
-          this.user = res;
-          console.log(res);
-        }, (error) => {
-          console.error('Erro ao obter dados do utilizador: ', error);
-        });
+      this.http
+        .get(`http://localhost:3005/users/${this.getUtilizadorId()}`, {
+          headers,
+        })
+        .subscribe(
+          (res: any) => {
+            this.user = res;
+            console.log(res);
+          },
+          (error) => {
+            console.error('Erro ao obter dados do utilizador: ', error);
+          }
+        );
     }
   }
 
