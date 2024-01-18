@@ -30,7 +30,7 @@ export class RestaurantsPageComponent implements OnInit {
     );
   }
 
-  filtrarPorHora() {
+  filterByHour() {
     if (this.selectedTime && this.restaurants.length > 0) {
       const selectedHour = new Date(`2000-01-01T${this.selectedTime}`);
 
@@ -51,7 +51,7 @@ export class RestaurantsPageComponent implements OnInit {
     }
   }
 
-  filtrarPorCapacidade() {
+  filterByCapacity() {
     if (this.numberOfPeople > 0) {
       this.restaurants = this.restaurants.filter(
         (a: any) => a.capacity >= this.numberOfPeople
@@ -73,6 +73,10 @@ export class RestaurantsPageComponent implements OnInit {
     } else {
       window.location.reload();
     }
+  }
+
+  clearFilters() {
+    window.location.reload();
   }
 
   sortRestaurantsPriceAsc(): void {

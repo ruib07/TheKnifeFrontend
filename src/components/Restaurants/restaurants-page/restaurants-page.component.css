@@ -10,11 +10,51 @@
    color: #000;
  }
 
- .input-search {
-  width: 400px;
-  height: 5vh;
-  border-radius: 7px;
+ .dropdown-toggle {
+  border-radius: 10px;
  }
+
+.filtrar-hora,
+.filtrar-capacidade {
+  display: inline-flex;
+}
+
+.filtrar-hora,
+.filtrar-capacidade input {
+  border-radius: 7px 0 0 7px;
+}
+
+.filtrar-hora,
+.filtrar-capacidade button {
+  border-radius: 0 10px 10px 0;
+}
+
+.search-clear {
+  display: inline-flex;
+}
+
+.search-clear button {
+  border-radius: 0 10px 10px 0;
+  height: 41px;
+}
+
+.input-search {
+  width: 400px;
+  height: 41px;
+  border-radius: 7px 0 0 7px;
+  margin-right: 0;
+  border: 1px solid #000;
+}
+
+.input-search::placeholder,
+.input-search:only-of-type {
+  text-align: center;
+}
+
+.search-clear button,
+.search-clear .input-search {
+  margin: 0;
+}
 
 .restaurants-cards {
   display: flex;

@@ -11,10 +11,16 @@
           <span class="material-icons align-middle mr-1"> schedule </span> Hora
         </button>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownTime">
-          <input type="time" class="form-control" [(ngModel)]="selectedTime" />
-          <button class="btn btn-secondary" (click)="filtrarPorHora()">
-            Filtrar
-          </button>
+          <div class="filtrar-hora">
+            <input
+              type="time"
+              class="form-control"
+              [(ngModel)]="selectedTime"
+            />
+            <button class="btn btn-secondary" (click)="filterByHour()">
+              Filtrar
+            </button>
+          </div>
         </div>
       </li>
 
@@ -28,14 +34,16 @@
           Pessoas
         </button>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownPeople">
-          <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="numberOfPeople"
-          />
-          <button class="btn btn-secondary" (click)="filtrarPorCapacidade()">
-            Filtrar
-          </button>
+          <div class="filtrar-capacidade">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="numberOfPeople"
+            />
+            <button class="btn btn-secondary" (click)="filterByCapacity()">
+              Filtrar
+            </button>
+          </div>
         </div>
       </li>
     </ul>
@@ -43,13 +51,18 @@
 
   <div class="middle-filters justify-content-center">
     <ul class="navbar-nav ml-auto">
-      <input
-        class="input-search"
-        type="search"
-        placeholder="Nome do restaurante"
-        (change)="pesquisar($event)"
-        aria-label="Search"
-      />
+      <div class="search-clear">
+        <input
+          class="input-search"
+          type="search"
+          placeholder="Nome do restaurante"
+          (change)="pesquisar($event)"
+          aria-label="Search"
+        />
+        <button class="btn btn-secondary" (click)="clearFilters()">
+          Limpar
+        </button>
+      </div>
     </ul>
   </div>
 
