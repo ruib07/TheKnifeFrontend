@@ -1,56 +1,55 @@
 <app-main-nav></app-main-nav>
 
-<div class="div">
+<div class="carrousel">
   <carousel>
     <slide>
       <img
         src="assets/Carrousel-HomePage/Restaurante1.jpeg"
         alt="first slide"
-        style="display: block; width: 100%"
+        style="width: 100%"
       />
     </slide>
     <slide>
       <img
         src="assets/Carrousel-HomePage/Restaurante2.jpeg"
         alt="second slide"
-        style="display: block; width: 100%"
+        style="width: 100%"
       />
     </slide>
     <slide>
       <img
         src="assets/Carrousel-HomePage/Restaurante3.jpeg"
         alt="third slide"
-        style="display: block; width: 100%"
+        style="width: 100%"
       />
     </slide>
   </carousel>
+  <br />
 
-  <div class="div-9">
-    <div class="titulo">Contactos</div>
+  <div class="contactos">
+    <h1 class="titulo">Contactos</h1>
 
-    <!-- Início Morada/Fale connosco -->
-    <div class="div-83" id="contacts">
+    <div class="contactos-info" id="contacts">
       <div class="div-84">
         <div class="column-8">
           <div class="div-85 flex-start">
             <div class="div-86">
               <div class="div-87 flex-start">
+                <!-- Morada -->
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/a1205f92057e6601b047718c039b866b8127e3ea8ad902fb5b2fb63c7e2eba4b?"
                   class="img-15"
                 />
-
                 <div class="div-88">
                   <div class="contacto">Morada</div>
                   <div class="div-90">
-                    Lorem ipsum dolor sit amet.
-                    <br />
-                    4564-767 Braga
+                    Lorem ipsum dolor sit amet.<br />4564-767 Braga
                   </div>
                 </div>
               </div>
 
+              <!-- Email -->
               <div class="div-91">
                 <img
                   loading="lazy"
@@ -63,6 +62,7 @@
                 </div>
               </div>
 
+              <!-- Contacto -->
               <div class="div-95">
                 <img
                   loading="lazy"
@@ -75,6 +75,7 @@
                 </div>
               </div>
 
+              <!-- Outras imagens -->
               <div class="div-99">
                 <img
                   loading="lazy"
@@ -95,6 +96,7 @@
             </div>
             <br />
 
+            <!-- Mapa -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.9657933924223!2d-8.481503424833257!3d41.439963871293244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24f7138c8f549b%3A0x355bd243ad2eeddf!2sIPCA%20Famalic%C3%A3o!5e0!3m2!1spt-PT!2spt!4v1703185793226!5m2!1spt-PT!2spt"
               width="580"
@@ -106,6 +108,8 @@
             ></iframe>
           </div>
         </div>
+
+        <!-- Formulário -->
         <div class="form-conatiner">
           <form
             #ContactsForm="ngForm"
@@ -114,7 +118,7 @@
           >
             <fieldset>
               <div class="div-101">
-                <div class="div-102">Fale connosco</div>
+                <h1 class="div-102">Fale connosco</h1>
                 <div class="div-103">
                   Preencha este formulário para nos contactar.
                 </div>
@@ -172,7 +176,6 @@
                   ngModel
                 ></textarea>
                 <label for="mensagem"></label>
-
                 <button type="submit" class="botao">Enviar</button>
                 <div id="aboutus"></div>
               </div>
@@ -182,10 +185,9 @@
       </div>
     </div>
     <br />
-    <!-- Fim Morada/Fale connosco -->
 
-    <div class="titulo">Sobre Nós</div>
-
+    <!-- Sobre Nós -->
+    <h1 class="titulo">Sobre Nós</h1>
     <div class="div-111">
       O The Knife reúne as opiniões, notas e comentários de milhares de
       clientes, para que saiba tudo sobre cada restaurante, e permite-lhe
@@ -196,9 +198,8 @@
       grupos e noites animadas ou para um jantar romântico a dois.<br />
     </div>
 
-    <div class="titulo">É proprietário de um restaurante?</div>
-
-    <!-- Início Cliente / Registo -->
+    <!-- Proprietário de Restaurante -->
+    <h1 class="titulo">É proprietário de um restaurante?</h1>
     <div class="div-113">
       <div class="div-114">
         <div class="column-10">
@@ -208,28 +209,26 @@
         </div>
         <div class="column-11">
           <div class="tabela">
-            <div class="sub-titulo-2">Registe o seu restaurante</div>
-
+            <!-- Registo do Restaurante -->
+            <h2 class="sub-titulo-2">Registe o seu restaurante</h2>
             <div class="texto">
               Dê-nos mais informações sobre si e iremos entrar em contacto
               consigo o mais breve possível.
             </div>
-
             <a
               routerLink="/Authentication/restaurant-registration"
               class="botao"
               >Ver mais informações</a
             >
-
+            <!-- Linha divisória -->
             <div class="linha"></div>
 
-            <div class="sub-titulo-2">Já é cliente</div>
-
+            <!-- Iniciar Sessão -->
+            <h2 class="sub-titulo-2">Já é cliente</h2>
             <div class="texto">
               Inicie sessão para conseguir gerir o seu restaurante no nosso
               website.
             </div>
-
             <a routerLink="/Authentication/login-responsibles" class="botao"
               >Iniciar Sessão</a
             >
@@ -237,7 +236,6 @@
         </div>
       </div>
     </div>
-    <!-- Fim Cliente / Registo -->
   </div>
   <br /><br />
 </div>

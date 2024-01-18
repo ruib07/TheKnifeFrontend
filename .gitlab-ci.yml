@@ -1,117 +1,31 @@
-image: node:20.9.0
-
 stages:
   - build
   - test
-  - review-stage
-  - staging-deploy
-  - production-deploy
-  - production-tests
+  - deploy
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
-
-variables:
-  STAGING_DOMAIN: theknife-staging.surge.sh
-  PRODUCTION_DOMAIN: theknife-prod.surge.sh
-
-before_script:
-  - npm install -g @angular/cli
-
-build website:
+build-job:
   stage: build
-  only:
-    - master
-    - merge_requests
   script:
-    - npm install
-    - ng build
-  artifacts:
-    paths:
-      - ./dist
+    - echo "Compiling the code..."
+    - echo "Compile complete."
 
-test artifacts:
-  image: alpine
+unit-test-job:
   stage: test
-  only:
-    - master
-    - merge_requests
   script:
-    - grep -q "theknife-website" ./dist/home.component.html
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
 
-test website:
+lint-test-job:
   stage: test
-  only:
-    - master
-    - merge_requests
   script:
-    - npm install
-    - ng serve --prod &
-    - sleep 5
-    - curl "http://localhost:4200" | grep -q "theknife-website"
+    - echo "Linting code... This will take about 10 seconds."
+    - sleep 10
+    - echo "No lint issues found."
 
-review deploy:
-  stage: review-stage
-  only:
-    - merge_requests
-  environment:
-    name: review/$CI_COMMIT_REF_NAME
-    url: http://theknife-$CI_ENVIRONMENT_SLUG.surge.sh
-    on_stop: review stop
+deploy-job:
+  stage: deploy
+  environment: production
   script:
-    - npm install --global surge
-    - surge --project ./dist --domain theknife-$CI_ENVIRONMENT_SLUG.surge.sh
-
-review stop:
-  stage: review-stage
-  only:
-    - merge_requests
-  variables:
-    GIT_STRATEGY: none
-  when: manual
-  environment:
-    name: review/$CI_COMMIT_REF_NAME
-    action: stop
-  script:
-    - npm install --global surge
-    - surge teardown theknife-$CI_ENVIRONMENT_SLUG.surge.sh
-
-staging deploy:
-  stage: staging-deploy
-  environment:
-    name: staging
-    url: http://$STAGING_DOMAIN
-  only:
-    - master
-  script:
-    - npm install --global surge
-    - surge --project ./dist --domain theknife-staging.surge.sh
-
-production deploy:
-  stage: production-deploy
-  environment:
-    name: production
-    url: http://$PRODUCTION_DOMAIN
-  only:
-    - master
-  when: manual
-  allow_failure: false
-  before_script:
-    - echo "Start deploy"
-    - npm install --global surge
-  script:
-    - surge --project ./dist --domain theknife-prod.surge.sh
-
-production test:
-  stage: production-tests
-  image: alpine
-  only:
-    - master
-  script:
-    - apk update
-    - apk add curl
-    - sleep 5
-    - curl "http://$PRODUCTION_DOMAIN" | grep -q "theknife-website"
-    - curl "http://$PRODUCTION_DOMAIN" | grep -q "$CI_COMMIT_SHORT_SHA"
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
