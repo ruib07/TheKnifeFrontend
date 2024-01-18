@@ -26,6 +26,7 @@ build website:
     - master
     - merge_requests
   script:
+    - npm install
     - ng build --prod
   artifacts:
     paths:
