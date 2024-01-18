@@ -44,7 +44,7 @@ body {
   .n-telefone-label,
   .password-label,
   .image-label {
-    margin-left: 84px!important;
+    margin-left: 84px;
   }
   
   .nome-utilizador-2,
@@ -71,5 +71,12 @@ body {
   h4 {
     margin: 0;
     font-weight:500;
+  }
+
+.eyeicon {  
+    position: absolute;
+    top: 434px;
+    right: 474px;
+    cursor: pointer;
   }
   
