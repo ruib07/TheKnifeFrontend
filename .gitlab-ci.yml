@@ -27,7 +27,7 @@ build website:
     - merge_requests
   script:
     - npm install
-    - ng build --prod
+    - ng build
   artifacts:
     paths:
       - ./dist
