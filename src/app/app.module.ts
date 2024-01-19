@@ -11,6 +11,7 @@ import { AvatarModule } from 'ngx-avatars';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from 'src/components/home/home.component';
@@ -80,6 +81,7 @@ import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover
     CarouselModule.forRoot(),
     FontAwesomeModule,
     NgbModule,
+    PaginationModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

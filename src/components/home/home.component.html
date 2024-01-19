@@ -26,6 +26,31 @@
   </carousel>
   <br />
 
+  <br><br>
+
+    <div class="pagination">
+      <div class="pagination-buttons">
+        <button class="arrow-button" (click)="prevPage()">&#60;</button>
+        <button class="arrow-button" (click)="nextPage()">&#62;</button>
+      </div>
+    </div>
+
+    <br>  
+
+    <div class="restaurants-cards">
+      <div *ngFor="let restaurant of paginatedRestaurants" class="restaurant-card1" (click)="goToRestaurantPreview(restaurant.id)">
+        <div class="restaurant-card11">
+          <img [src]="restaurant.image" class="restaurant-img-icon">
+          <p class="categoria-restaurante">{{ restaurant.category }}</p>
+          <b class="nome-do-restaurante">{{ restaurant.name }}</b>
+          <p class="morada-restaurante">{{ restaurant.location }}</p>
+          <p class="preo-mdio-x">Preço médio: {{ restaurant.averageprice }}€</p>
+        </div>
+      </div>
+    </div>
+    
+    <br><br>
+
   <div class="contactos">
     <h1 class="titulo">Contactos</h1>
 

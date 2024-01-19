@@ -1,0 +1,387 @@
+.rectangle-icon {
+    position: relative;
+    width: 100%;
+    height: 572px;
+    object-fit: cover;
+}
+
+.rpreview-details {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 0px 0px 25px 25px;
+    background-color: rgba(229, 229, 229, 0.2);
+}
+
+.escrever-avaliao1 {
+    position: relative;
+}
+
+.escrever-avaliao {
+    position: absolute;
+    height: 2.17%;
+    width: 32.49%;
+    top: 93.98%;
+    right: 33.67%;
+    bottom: 3.85%;
+    left: 33.84%;
+    border-radius: 10px;
+    background-color: #f8bd00;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.restaurant-page-card-child {
+    position: absolute;
+    height: 10.31%;
+    width: 83.12%;
+    top: 81.74%;
+    right: 8.35%;
+    bottom: 7.95%;
+    left: 8.52%;
+    border-radius: 25px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.descreva-a-sua {
+    position: absolute;
+    height: 0.77%;
+    width: 16.29%;
+    top: 82.95%;
+    left: 10.3%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pontuao1 {
+    position: relative;
+    font-weight: 500;
+}
+
+.arrow-drop-down-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.pontuao {
+    position: absolute;
+    height: 2.41%;
+    width: 15.61%;
+    top: 78.37%;
+    right: 75.86%;
+    bottom: 19.22%;
+    left: 8.52%;
+    border-radius: 7px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.deixe-a-sua {
+    position: absolute;
+    height: 1.35%;
+    width: 49.37%;
+    top: 76.06%;
+    left: 25.4%;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mais-avaliaes {
+    position: absolute;
+    height: 2.17%;
+    width: 32.49%;
+    top: 69.08%;
+    right: 33.67%;
+    bottom: 28.76%;
+    left: 33.84%;
+    border-radius: 10px;
+    background-color: #f8bd00;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.avaliao-card-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 25px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.avaliao-card-item {
+    position: absolute;
+    height: 28.04%;
+    width: 6.09%;
+    top: 12.15%;
+    right: 91.37%;
+    bottom: 59.81%;
+    left: 2.54%;
+    border-radius: 30px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.gonalo-silva {
+    position: absolute;
+    height: 13.08%;
+    width: 16.24%;
+    top: 10.75%;
+    left: 10.15%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.de-novembro-de {
+    position: absolute;
+    height: 8.88%;
+    width: 19.59%;
+    top: 26.17%;
+    left: 10.15%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.lorem-ipsum-dolor {
+    position: absolute;
+    height: 29.91%;
+    width: 94.92%;
+    top: 53.74%;
+    left: 2.54%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.div {
+    position: absolute;
+    height: 13.08%;
+    width: 3.76%;
+    top: 13.55%;
+    left: 93.71%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.avaliao-card {
+    position: absolute;
+    height: 10.31%;
+    width: 83.12%;
+    top: 56.84%;
+    right: 8.35%;
+    bottom: 32.85%;
+    left: 8.52%;
+    font-size: 24px;
+}
+
+.avaliao-card1 {
+    position: absolute;
+    height: 10.31%;
+    width: 83.12%;
+    top: 45.57%;
+    right: 8.35%;
+    bottom: 44.12%;
+    left: 8.52%;
+    font-size: 24px;
+}
+
+.avaliao-card2 {
+    position: absolute;
+    height: 10.31%;
+    width: 83.12%;
+    top: 34.3%;
+    right: 8.35%;
+    bottom: 55.39%;
+    left: 8.52%;
+    font-size: 24px;
+}
+
+.avaliaes {
+    position: absolute;
+    height: 1.35%;
+    width: 10.55%;
+    top: 31.55%;
+    left: 44.73%;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-page-card-item {
+    position: absolute;
+    height: 23.21%;
+    width: 40.93%;
+    top: 2.41%;
+    right: 8.44%;
+    bottom: 74.38%;
+    left: 50.63%;
+    border-radius: 25px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.reservar1 {
+    position: relative;
+    letter-spacing: -0.02em;
+}
+
+.reservar {
+    position: absolute;
+    height: 2.12%;
+    width: 15.61%;
+    top: 23.53%;
+    right: 67.43%;
+    bottom: 74.35%;
+    left: 16.96%;
+    border-radius: 10px;
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #fff;
+}
+
+.here-at-il {
+    position: absolute;
+    height: 6.17%;
+    width: 32.49%;
+    top: 15.46%;
+    left: 8.52%;
+    display: flex;
+    align-items: center;
+}
+
+.p {
+    margin: 0;
+}
+
+.fechados-txt {
+    width: 100%;
+}
+
+.fechados {
+    position: absolute;
+    height: 1.54%;
+    width: 17.13%;
+    top: 12.76%;
+    left: 24.14%;
+    display: flex;
+    white-space: pre-wrap;
+    align-items: center;
+}
+
+.segunda-sexta-container {
+    position: absolute;
+    height: 1.54%;
+    width: 10.04%;
+    top: 12.76%;
+    left: 8.52%;
+    display: flex;
+    align-items: center;
+}
+
+.preo-mdio-25 {
+    position: absolute;
+    height: 1.01%;
+    width: 12.07%;
+    top: 10.79%;
+    left: 8.52%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.r-dom-paio {
+    position: absolute;
+    height: 1.35%;
+    width: 30.38%;
+    top: 8.48%;
+    left: 8.52%;
+    font-size: 18px;
+    font-weight: 500;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.il-gusto-italiano {
+    position: absolute;
+    height: 1.73%;
+    width: 22.19%;
+    top: 4.82%;
+    left: 8.52%;
+    font-size: 32px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.comida-italiana {
+    position: absolute;
+    height: 1.45%;
+    width: 16.54%;
+    top: 2.41%;
+    left: 8.52%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-page-card {
+    position: relative;
+    width: 100%;
+    height: 2026px;
+    text-align: left;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Work Sans';
+}
+
+
