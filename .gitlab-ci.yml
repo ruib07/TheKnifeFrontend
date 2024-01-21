@@ -29,7 +29,7 @@ build website:
     - ng build
   artifacts:
     paths:
-      - ./dist
+      - ./src
 
 test artifacts:
   image: alpine
@@ -52,7 +52,7 @@ test website:
     - npm install -g @angular/cli
     - ng build
     - npm install -g http-server
-    - http-server ./dist -p 4200 -s &
+    - http-server ./src -p 4200 -s &
     - sleep 5
     - curl "http://localhost:4200" | grep -q "theknife-website"
 
@@ -62,11 +62,11 @@ review deploy:
     - merge_requests
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: http://$CI_ENVIRONMENT_SLUG.surge.sh
+    url: http://theknife-$CI_ENVIRONMENT_SLUG.surge.sh
     on_stop: review stop
   script:
     - npm install --global surge
-    - surge --project ./dist --domain $CI_ENVIRONMENT_SLUG.surge.sh
+    - surge --project ./src --domain theknife-$CI_ENVIRONMENT_SLUG.surge.sh
 
 review stop:
   stage: review-stage
@@ -80,7 +80,7 @@ review stop:
     action: stop
   script:
     - npm install --global surge
-    - surge teardown $CI_ENVIRONMENT_SLUG.surge.sh
+    - surge teardown theknife-$CI_ENVIRONMENT_SLUG.surge.sh
 
 staging deploy:
   stage: staging-deploy
@@ -91,7 +91,7 @@ staging deploy:
     - master
   script:
     - npm install --global surge
-    - surge --project ./dist --domain $STAGING_DOMAIN
+    - surge --project ./src --domain $STAGING_DOMAIN
 
 production deploy:
   stage: production-deploy
@@ -106,7 +106,7 @@ production deploy:
     - echo "Start deploy"
     - npm install --global surge
   script:
-    - surge --project ./dist --domain $PRODUCTION_DOMAIN
+    - surge --project ./src --domain $PRODUCTION_DOMAIN
 
 production test:
   stage: production-tests
@@ -117,5 +117,5 @@ production test:
     - apk update
     - apk add curl
     - sleep 5
-    - curl "http://$PRODUCTION_DOMAIN" | grep -q "theknife-website"
+    - curl "http://$PRODUCTION_DOMAIN" | grep -q "Enviar"
     - curl "http://$PRODUCTION_DOMAIN" | grep -q "$CI_COMMIT_SHORT_SHA"
