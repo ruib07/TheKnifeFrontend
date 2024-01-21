@@ -104,6 +104,8 @@ production deploy:
     - echo "Start deploy"
     - npm install --global surge
   script:
+    - ng build
+    - cp dist/index.html dist/200.html
     - surge --project ./dist --domain $PRODUCTION_DOMAIN
 
 production test:
