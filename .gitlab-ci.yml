@@ -38,7 +38,7 @@ test artifacts:
     - master
     - merge_requests
   script:
-    - grep -q "theknife-website" ./dist/index.html
+    - grep -q "theknife-website" ./dist/home.component.html
 
 test website:
   stage: test
