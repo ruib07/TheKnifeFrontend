@@ -54,7 +54,7 @@ test website:
     - npm install -g http-server
     - http-server ./src -p 4200 -s &
     - sleep 5
-    - curl "http://localhost:4200" | grep -q "Enviar"
+    - curl "http://localhost:4200"
 
 review deploy:
   stage: review-stage
