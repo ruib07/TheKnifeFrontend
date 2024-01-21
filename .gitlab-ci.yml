@@ -54,7 +54,7 @@ test website:
     - npm install -g http-server
     - http-server ./src -p 4200 -s &
     - sleep 5
-    - curl "http://localhost:4200" | grep -q "theknife-website"
+    - curl "http://localhost:4200" | grep -q "Enviar"
 
 review deploy:
   stage: review-stage
