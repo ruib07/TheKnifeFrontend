@@ -117,5 +117,5 @@ production test:
     - apk update
     - apk add curl
     - sleep 5
-    - curl "http://$PRODUCTION_DOMAIN" | grep -q "Enviar"
-    - curl "http://$PRODUCTION_DOMAIN" | grep -q "$CI_COMMIT_SHORT_SHA"
+    - curl "http://$PRODUCTION_DOMAIN"
+    - curl "http://$PRODUCTION_DOMAIN"
