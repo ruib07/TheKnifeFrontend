@@ -27,7 +27,6 @@ build website:
     - npm install
     - npm install -g @angular/cli
     - ng build
-    - cp -r ./dist/* ./dist/
   artifacts:
     paths:
       - ./dist
@@ -108,8 +107,6 @@ production deploy:
     - npm install -g @angular/cli
     - ng build
   script:
-    - cp -r ./dist/* ./dist/
-    - cp dist/index.html dist/200.html
     - surge --project ./dist --domain $PRODUCTION_DOMAIN
 
 production test:
