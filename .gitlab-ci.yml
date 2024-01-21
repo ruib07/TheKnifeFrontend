@@ -29,7 +29,7 @@ build website:
     - ng build
   artifacts:
     paths:
-      - ./src
+      - ./dist
 
 test artifacts:
   image: alpine
@@ -50,7 +50,7 @@ test website:
     - npm install -g @angular/cli
     - ng build
     - npm install -g http-server
-    - http-server ./src -p 4200 -s &
+    - http-server ./dist -p 4200 -s &
     - sleep 5
     - curl "http://localhost:4200"
 
@@ -64,7 +64,7 @@ review deploy:
     on_stop: review stop
   script:
     - npm install --global surge
-    - surge --project ./src --domain theknife-$CI_ENVIRONMENT_SLUG.surge.sh
+    - surge --project ./dist --domain theknife-$CI_ENVIRONMENT_SLUG.surge.sh
 
 review stop:
   stage: review-stage
@@ -89,7 +89,7 @@ staging deploy:
     - master
   script:
     - npm install --global surge
-    - surge --project ./src --domain $STAGING_DOMAIN
+    - surge --project ./dist --domain $STAGING_DOMAIN
 
 production deploy:
   stage: production-deploy
@@ -104,7 +104,7 @@ production deploy:
     - echo "Start deploy"
     - npm install --global surge
   script:
-    - surge --project ./src --domain $PRODUCTION_DOMAIN
+    - surge --project ./dist --domain $PRODUCTION_DOMAIN
 
 production test:
   stage: production-tests
