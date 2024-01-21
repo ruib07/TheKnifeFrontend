@@ -103,8 +103,11 @@ production deploy:
   before_script:
     - echo "Start deploy"
     - npm install --global surge
+    - npm install
+    - npm install -g @angular/cli
+    - ng build
   script:
-    - cp dist/index.html
+    - cp dist/index.html dist/200.html
     - surge --project ./dist --domain $PRODUCTION_DOMAIN
 
 production test:
