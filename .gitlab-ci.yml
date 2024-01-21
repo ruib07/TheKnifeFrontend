@@ -40,7 +40,7 @@ test artifacts:
   script:
     - ls -la ./src/components/home/
     - cat ./src/components/home/home.component.html
-    - grep -q "theknife-website" ./src/components/home/home.component.html
+    - grep -q "Enviar" ./src/components/home/home.component.html
 
 test website:
   stage: test
