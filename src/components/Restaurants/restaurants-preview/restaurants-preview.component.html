@@ -1,76 +1,32 @@
 <app-main-nav></app-main-nav>
 
-<img class="rectangle-icon" alt="" src="assets/Carrousel-HomePage/Restaurante3.jpeg">
-  	
-  	<div class="restaurant-page-card">
-    		<div class="rpreview-details">
-    		</div>
-    		<div class="escrever-avaliao">
-      			<div class="escrever-avaliao1">Escrever Avaliação</div>
-    		</div>
-    		<img class="restaurant-page-card-child" alt="" src="Rectangle 28.svg">
-    		
-    		<div class="descreva-a-sua">*Descreva a sua experiência</div>
-    		<div class="pontuao">
-      			<div class="pontuao1">Pontuação</div>
-      			<img class="arrow-drop-down-icon" alt="" src="arrow_drop_down.svg">
-      			
-    		</div>
-    		<div class="deixe-a-sua">Deixe a Sua Avaliação</div>
-    		<div class="mais-avaliaes">
-      			<div class="escrever-avaliao1">Mais Avaliações</div>
-    		</div>
-    		<div class="avaliao-card">
-      			<img class="avaliao-card-child" alt="" src="Rectangle 26.svg">
-      			
-      			<img class="avaliao-card-item" alt="" src="Rectangle 27.png">
-      			
-      			<div class="gonalo-silva">Gonçalo Silva</div>
-      			<div class="de-novembro-de">10 de novembro de 2023</div>
-      			<div class="lorem-ipsum-dolor">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-      			<div class="div">8.8</div>
-    		</div>
-    		<div class="avaliao-card1">
-      			<img class="avaliao-card-child" alt="" src="Rectangle 26.svg">
-      			
-      			<img class="avaliao-card-item" alt="" src="Rectangle 27.png">
-      			
-      			<div class="gonalo-silva">Gonçalo Silva</div>
-      			<div class="de-novembro-de">10 de novembro de 2023</div>
-      			<div class="lorem-ipsum-dolor">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-      			<div class="div">8.8</div>
-    		</div>
-    		<div class="avaliao-card2">
-      			<img class="avaliao-card-child" alt="" src="Rectangle 26.svg">
-      			
-      			<img class="avaliao-card-item" alt="" src="Rectangle 27.png">
-      			
-      			<div class="gonalo-silva">Gonçalo Silva</div>
-      			<div class="de-novembro-de">10 de novembro de 2023</div>
-      			<div class="lorem-ipsum-dolor">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-      			<div class="div">8.8</div>
-    		</div>
-    		<div class="avaliaes">Avaliações</div>
-    		<img class="restaurant-page-card-item" alt="" src="Rectangle 24.png">
-    		
-    		<div class="reservar">
-      			<b class="reservar1" >Reservar</b>
-    		</div>
-    		<div class="here-at-il">Here at Il Gusto Italiano we provide the client with lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-    		<b class="fechados">
-      			<span class="fechados-txt">
-        				<p class="p">12:00 - 15:00  /  19:00 - 23:00</p>
-        				<p class="p">Fechados</p>
-      			</span>
-    		</b>
-    		<b class="segunda-sexta-container">
-      			<span class="fechados-txt">
-        				<p class="p">Segunda - Sexta:</p>
-        				<p class="p">Domingos:</p>
-      			</span>
-    		</b>
-    		<div class="preo-mdio-25">Preço médio: 25€</div>
-    		<a class="r-dom-paio" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd24fec2c019b335:0xc66a740078aae60?sa=X&ved=2ahUKEwjO6L6L89SCAxWrSaQEHaZFCeUQ4kB6BAgOEAA" target="_blank">R. Dom Paio Mendes 25, 4700-424 Braga</a>
-    		<div class="il-gusto-italiano">Il Gusto Italiano</div>
-    		<b class="comida-italiana">Comida Italiana</b>
-  	</div>
+<img class="rectangle-icon" [src]="restaurantData.image" />
+
+<div class="restaurant-page-card">
+  <div class="category">
+    <p>{{ restaurantData.category }}</p>
+  </div>
+  <div class="name">
+    <h2 class="name">{{ restaurantData.name }}</h2>
+  </div>
+  <div class="location mt-5">
+    <p>{{ restaurantData.location }}</p>
+  </div>
+  <div class="averageprice mt-4">
+    <p>Preço médio: {{ restaurantData.averageprice }}€</p>
+  </div>
+  <div class="openingdays">
+    <p>{{ restaurantData.openingdays }}:</p>
+    <p class="ms-2">
+      {{ restaurantData.openinghours }} - {{ restaurantData.closinghours }}
+    </p>
+  </div>
+  <div class="desc">
+    <p>
+      {{ restaurantData.desc }}
+    </p>
+  </div>
+  <div class="reservar-botao text-center">
+    <button class="reservar" routerLink="/reservations">Reservar</button>
+  </div>
+</div>

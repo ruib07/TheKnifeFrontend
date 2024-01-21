@@ -1,176 +1,84 @@
-/* Estilos para h1 */
-h1, h2 {
+h1,
+h2 {
   text-align: center;
-}
-
-.restaurant-card11 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-  border-radius: 10px;
-  background-color: rgba(204, 204, 204, 0.5);
 }
 
 .restaurant-img-icon {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 10px 10px 0px 0px;
+  top: 0;
+  left: 0;
+  border-radius: 10px 10px 0 0;
   width: 100%;
   height: 139px;
   object-fit: cover;
 }
 
-.nome-do-restaurante {
+.nome-do-restaurante,
+.morada-restaurante,
+.preo-mdio-x,
+.categoria-restaurante {
   position: absolute;
-  top: 173px;
   left: 7px;
+}
+
+.nome-do-restaurante {
+  top: 173px;
   font-size: 20px;
 }
 
 .morada-restaurante {
-  position: absolute;
   top: 211px;
-  left: 7px;
   font-size: 12px;
 }
 
 .preo-mdio-x {
-  position: absolute;
   top: 314px;
-  left: 7px;
   font-size: 16px;
 }
 
 .categoria-restaurante {
-  position: absolute;
   top: 148px;
-  left: 7px;
 }
 
 .restaurant-card1 {
   position: relative;
   width: 21.6%;
   height: 346px;
-  text-align: left;   
+  text-align: left;
   font-size: 14px;
   color: #000;
-  font-family: 'Work Sans';
-}
-
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-
-.pagination-buttons button {
-  margin-left: 10px; /* Adapte conforme necessário para dar um espaçamento entre os botões */
-}
-
-.restaurant-card1 {
-  /* Adicione estilos para o card do restaurante conforme necessário */
   margin-right: 44px;
 }
 
-.restaurants-cards {
-  display: flex;
-  flex-wrap: wrap;
+.pagination-buttons button {
+  margin-left: 10px;
 }
 
 .arrow-button {
   background-color: #f0f0f0;
-  font-size: 32px; /* Tamanho maior */
+  font-size: 32px;
   color: black;
-  width: 50px; /* Ajuste conforme necessário */
-  height: 50px; /* Ajuste conforme necessário */
-  border: 2px solid black; /* Borda preta de 2px */
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
   cursor: pointer;
-  border-radius: 10px; /* Borda mais arredondada */
-}
-
-
-/* Estilos para a div-83 */
-.div-83 {
   border-radius: 10px;
-  background-color: #fff;
-  align-self: stretch;
-  margin-top: 30px;
 }
 
-/* Estilos para a div-84 e suas sub-classes */
-.div-84 {
-  gap: 20px;
-  display: flex;
-}
-
-.column-8,
-.form-conatiner {
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-}
-
-.column-8 {
-  width: 46%;
-}
-
-.form-conatiner {
-  width: 54%;
-  margin-left: 20px;
-}
-
-/* Estilos para a div-85 */
-.div-85 {
-  border-radius: 10px;
-  background-color: #1b1b1b;
-  display: flex;
-  flex-grow: 1;
-  padding-top: 50px;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Estilos para a div-86 */
-.div-86 {
-  display: flex;
-  width: 215px;
-  max-width: 100%;
-  flex-direction: column;
-  margin: 9px 0 0 39px;
-}
-
-/* Estilos para a div-87 */
-.div-87,
-.div-91,
-.div-95,
+.div-83,
+.div-84,
+.div-85,
+.div-88,
+.div-92,
+.div-96,
+.div-98,
 .div-99 {
   display: flex;
   justify-content: space-between;
   gap: 7px;
+  border-radius: 10px;
 }
 
-/* Estilos para as imagens */
-.img-15,
-.img-16,
-.img-17,
-.img-18,
-.img-19,
-.img-20,
-.img-21 {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
-  width: 40px;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-/* Estilos para a div-88, div-92, div-96, div-98 */
 .div-88,
 .div-92,
 .div-96,
@@ -182,49 +90,34 @@ h1, h2 {
   flex-direction: column;
 }
 
-/* Estilos para os textos */
-.contacto,
-.div-90,
-.div-94,
-.div-98 {
-  color: #fff;
-}
-
-/* Estilos para a div-99 */
-.div-99 {
-  display: flex;
-  margin-top: 44px;
-  padding-right: 63px;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-/* Estilos para o formulário e sub-classes */
+.column-8,
+.column-10,
+.column-11,
+.form-container,
 .div-100,
 .div-101 {
   display: flex;
   flex-direction: column;
+  line-height: normal;
+}
+
+.div-85,
+.div-100,
+.div-111,
+.div-113,
+.div-114 {
+  align-self: stretch;
 }
 
 .div-100 {
   background-color: #fff;
   flex-grow: 1;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 42px 60px;
 }
 
-.div-101 {
-  display: flex;
-  margin-bottom: 35px;
-  width: 426px;
-  max-width: 100%;
-  flex-direction: column;
-}
-
-/* Estilos para os inputs e textarea */
 .nome,
 .email,
 .telemovel,
@@ -239,7 +132,6 @@ h1, h2 {
   border-style: none;
 }
 
-/* Estilos para a div-111 */
 .div-111 {
   color: #000;
   text-align: justify;
@@ -251,7 +143,6 @@ h1, h2 {
   padding: 19px 12px;
 }
 
-/* Estilos para a div-113 e sub-classes */
 .div-113 {
   border-radius: 10px;
   box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
@@ -259,32 +150,10 @@ h1, h2 {
   margin-top: 20px;
 }
 
-.div-114 {
-  margin-bottom: -20px;
-  display: inline-flex;
-}
-
-.column-10,
-.column-11 {
-  margin-right: 35px;
-  flex-direction: column;
-  line-height: normal;
-}
-
 .column-10 img {
   width: 100%;
   height: 94%;
   border-radius: 10px 0 0 10px;
-}
-
-.column-11 {
-  width: 61%;
-  margin-left: 20px;
-}
-
-.tabela {
-  display: flex;
-  flex-direction: column;
 }
 
 .linha {
@@ -299,15 +168,4 @@ h1, h2 {
   color: #000;
   align-self: center;
   white-space: nowrap;
-}
-
-.botao {
-  color: #fff;
-  white-space: nowrap;
-  border-radius: 10px;
-  background-color: #1b1b1b;
-  align-self: center;
-  margin-top: 31px;
-  padding: 11px 28px 11px 23px;
-  text-decoration: none;
 }
