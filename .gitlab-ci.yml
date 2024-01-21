@@ -38,6 +38,8 @@ test artifacts:
     - master
     - merge_requests
   script:
+    - ls -la ./src/components/home/
+    - cat ./src/components/home/home.component.html
     - grep -q "theknife-website" ./src/components/home/home.component.html
 
 test website:
