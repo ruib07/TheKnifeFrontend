@@ -38,7 +38,7 @@ test artifacts:
     - master
     - merge_requests
   script:
-    - grep -q "theknife-website" ./dist/home.component.html
+    - grep -q "theknife-website" ./src/components/home/home.component.html
 
 test website:
   stage: test
@@ -48,7 +48,9 @@ test website:
   script:
     - npm install
     - npm install -g @angular/cli
-    - ng serve &
+    - ng build
+    - npm install -g http-server
+    - http-server ./dist -p 4200 -s &
     - sleep 5
     - curl "http://localhost:4200" | grep -q "theknife-website"
 
