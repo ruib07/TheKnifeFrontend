@@ -35,7 +35,6 @@ export class MainNavComponent implements OnInit {
         .subscribe(
           (res: any) => {
             this.responsavel = res;
-            console.log(res);
           },
           (error) => {
             console.error('Erro ao obter dados do responsável: ', error);
@@ -83,7 +82,6 @@ export class MainNavComponent implements OnInit {
         .subscribe(
           (res: any) => {
             this.user = res;
-            console.log(res);
           },
           (error) => {
             console.error('Erro ao obter dados do utilizador: ', error);

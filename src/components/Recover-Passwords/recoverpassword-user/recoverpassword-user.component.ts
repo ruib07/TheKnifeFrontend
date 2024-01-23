@@ -28,7 +28,6 @@ export class RecoverpasswordUserComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.existingEmail = params['email'];
-      console.log(this.existingEmail);
     });
   }
 
@@ -64,8 +63,6 @@ export class RecoverpasswordUserComponent implements OnInit {
     newPassword: string;
     confirmNewPassword: string;
   }) {
-    console.log(recoverPasswordUser);
-    console.log(this.existingEmail);
     this.http
       .put(
         `http://localhost:3005/registerusers/${this.existingEmail}/updatepassword`,
@@ -73,7 +70,6 @@ export class RecoverpasswordUserComponent implements OnInit {
       )
       .subscribe(
         (res) => {
-          console.log(res);
           this.showSuccess();
           this.router.navigate(['/Authentication/login']);
         },

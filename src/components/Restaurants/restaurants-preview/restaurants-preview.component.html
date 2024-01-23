@@ -33,12 +33,17 @@
     </p>
   </div>
   <div class="reservar-botao text-center">
-    <button class="reservar" routerLink="/reservations">Reservar</button>
+    <button class="reservar" (click)="goToReservation(restaurantData.id)">
+      Reservar
+    </button>
   </div>
-    		
+
   <div class="calendario">
-	  <br><br>
-	  <ngb-datepicker #dp [(ngModel)]="selectedDate" [minDate]="minDate" (ngModelChange)="onDateChange($event)"></ngb-datepicker>
+    <br /><br />
+    <ngb-datepicker
+      #dp
+      [(ngModel)]="selectedDate"
+      [minDate]="minDate"
+    ></ngb-datepicker>
   </div>
-  
 </div>

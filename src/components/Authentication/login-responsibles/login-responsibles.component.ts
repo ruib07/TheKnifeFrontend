@@ -52,7 +52,6 @@ export class LoginResponsiblesComponent {
       })
       .subscribe(
         (res: any) => {
-          console.log(res);
           const token = res.body.token;
           if (token) {
             localStorage.setItem('token', token);

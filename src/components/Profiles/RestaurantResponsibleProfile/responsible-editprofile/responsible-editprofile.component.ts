@@ -65,7 +65,6 @@ export class ResponsibleEditprofileComponent implements OnInit {
         .subscribe(
           (res: any) => {
             this.responsavel = res;
-            console.log(res);
           },
           (error) => {
             console.error('Erro ao obter dados do responsável: ', error);
@@ -94,7 +93,6 @@ export class ResponsibleEditprofileComponent implements OnInit {
         )
         .subscribe(
           (res: any) => {
-            console.log(res);
             this.setStyle('');
             this.showSuccess();
 

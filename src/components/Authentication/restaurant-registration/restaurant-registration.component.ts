@@ -106,7 +106,6 @@ export class RestaurantRegistrationComponent {
                   userDataForRestaurants
                 )
                 .subscribe((restaurantRes) => {
-                  console.log('Registered new restaurant: ' + restaurantRes);
                   this.setStyle('');
                   this.showSuccess();
                   this.router.navigate(['/Authentication/login-responsibles']);

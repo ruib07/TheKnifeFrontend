@@ -22,7 +22,6 @@ export class RestaurantsPageComponent implements OnInit {
     this.http.get('http://localhost:3005/restaurants').subscribe(
       (res) => {
         this.restaurants = res;
-        console.log(this.restaurants);
       },
       (error) => {
         console.error('Erro ao obter restaurantes: ', error);

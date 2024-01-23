@@ -38,7 +38,6 @@ export class RestaurantGraphComponent implements OnInit {
 
           this.restaurant = filteredRestaurant;
           this.restaurantId = filteredRestaurant.id;
-          console.log(filteredRestaurant);
 
           this.getReservationsFromRestaurant();
         },

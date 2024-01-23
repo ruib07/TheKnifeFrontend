@@ -12,7 +12,7 @@ export class HomeComponent {
   restaurants: any = {};
   currentPage: number = 1;
   itemsPerPage: number = 4;
-  
+
   constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) {}
 
   get totalPages() {
@@ -37,7 +37,7 @@ export class HomeComponent {
       this.currentPage++;
     }
   }
-  
+
   ngOnInit() {
     this.getRestaurants();
   }
@@ -46,7 +46,6 @@ export class HomeComponent {
     this.http.get('http://localhost:3005/restaurants').subscribe(
       (res) => {
         this.restaurants = res;
-        console.log(this.restaurants);
       },
       (error) => {
         console.error('Erro ao obter restaurantes: ', error);
@@ -83,15 +82,11 @@ export class HomeComponent {
     subject: string;
     message: string;
   }) {
-    console.log(contact);
-
     this.http.post('http://localhost:3005/contacts', contact).subscribe(
       (res: any) => {
-        console.log(res);
         this.showSuccess();
       },
       (error) => {
-        console.log(error);
         this.showError();
       }
     );

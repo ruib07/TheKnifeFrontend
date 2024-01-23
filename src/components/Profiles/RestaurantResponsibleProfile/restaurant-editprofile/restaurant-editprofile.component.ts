@@ -59,7 +59,6 @@ export class RestaurantEditprofileComponent implements OnInit {
           }
 
           this.restaurant = filteredRestaurant;
-          console.log(filteredRestaurant);
         },
         (error) => {
           console.error(error);
@@ -110,7 +109,6 @@ export class RestaurantEditprofileComponent implements OnInit {
         )
         .subscribe(
           (res: any) => {
-            console.log(res);
             this.setStyle('');
             this.showSuccess();
 

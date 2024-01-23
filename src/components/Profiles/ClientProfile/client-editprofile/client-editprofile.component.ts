@@ -54,10 +54,10 @@ export class ClientEditprofileComponent implements OnInit {
 
   getUtilizador() {
     const usertoken = localStorage.getItem('usertoken');
-  
+
     if (usertoken) {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${usertoken}`);
-  
+
       this.http
         .get(`http://localhost:3005/users/${this.getUtilizadorId()}`, { headers })
         .subscribe(
@@ -74,7 +74,7 @@ export class ClientEditprofileComponent implements OnInit {
           }
         );
     }
-  }  
+  }
 
   updateUsersInfo(updateUser: {
     username: string;
@@ -95,7 +95,6 @@ export class ClientEditprofileComponent implements OnInit {
         )
         .subscribe(
           (res: any) => {
-            console.log(res);
             const updateForRegisterUsers = {
               username: updateUser.username,
               email: updateUser.email,
@@ -107,7 +106,6 @@ export class ClientEditprofileComponent implements OnInit {
                 updateForRegisterUsers
               )
               .subscribe((res: any) => {
-                console.log(res);
                 setTimeout(() => {
                   window.location.reload();
                 }, 3000);
@@ -123,7 +121,7 @@ export class ClientEditprofileComponent implements OnInit {
         );
     }
   }
-  
+
 
   getUtilizadorId() {
     const usertoken = localStorage.getItem('usertoken');
@@ -137,7 +135,7 @@ export class ClientEditprofileComponent implements OnInit {
     }
     return null;
   }
-  
+
   private setStyle(style: string) {
     const usernameInput = this.el.nativeElement.querySelector('[name="username"]');
     const emailInput = this.el.nativeElement.querySelector('[name="email"]');

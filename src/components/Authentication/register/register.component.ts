@@ -42,12 +42,8 @@ export class RegisterComponent {
   }
 
   RegisterUsers(registerusers: { username: string, email: string, password: string }) {
-    console.log(registerusers);
-
     this.http.post('http://localhost:3005/registerusers', registerusers)
       .subscribe((res: any) => {
-        console.log(res);
-
         const userDataForUsersTable = {
           username: registerusers.username,
           email: registerusers.email,
@@ -58,7 +54,6 @@ export class RegisterComponent {
 
         this.http.post('http://localhost:3005/auths/usersignup', userDataForUsersTable)
           .subscribe((userRes) => {
-            console.log("Registered user: " + userRes);
             this.showSuccess();
             this.router.navigate(['/Authentication/login/']);
           });

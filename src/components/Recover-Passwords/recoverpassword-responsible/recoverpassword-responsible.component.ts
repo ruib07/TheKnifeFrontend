@@ -26,7 +26,6 @@ export class RecoverpasswordResponsibleComponent {
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.existingEmail = params['email'];
-      console.log(this.existingEmail);
     });
   }
 
@@ -57,8 +56,6 @@ export class RecoverpasswordResponsibleComponent {
     newPassword: string;
     confirmNewPassword: string;
   }) {
-    console.log(recoverPasswordResponsavel);
-    console.log(this.existingEmail);
     this.http
       .put(
         `http://localhost:3005/restaurantregistrations/${this.existingEmail}/updatepassword`,
@@ -66,7 +63,6 @@ export class RecoverpasswordResponsibleComponent {
       )
       .subscribe(
         (res) => {
-          console.log(res);
           this.showSuccess();
           this.router.navigate(['/Authentication/login-responsibles']);
         },

@@ -8,6 +8,7 @@ import { RestaurantRegistrationComponent } from 'src/components/Authentication/r
 import { BookingHistoryComponent } from 'src/components/Profiles/ClientProfile/booking-history/booking-history.component';
 import { ClientEditprofileComponent } from 'src/components/Profiles/ClientProfile/client-editprofile/client-editprofile.component';
 import { ClientReviewsComponent } from 'src/components/Profiles/ClientProfile/client-reviews/client-reviews.component';
+import { RestaurantFavouritesComponent } from 'src/components/Profiles/ClientProfile/restaurant-favourites/restaurant-favourites.component';
 import { ResponsibleEditprofileComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/responsible-editprofile/responsible-editprofile.component';
 import { RestaurantEditprofileComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-editprofile/restaurant-editprofile.component';
 import { RestaurantGraphComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-graph/restaurant-graph.component';
@@ -45,6 +46,10 @@ const routes: Routes = [
     component: ClientReviewsComponent,
   },
   {
+    path: 'Profiles/ClientProfile/restaurant-favourites',
+    component: RestaurantFavouritesComponent,
+  },
+  {
     path: 'Recover-Passwords/recoverpassword-responsible',
     component: RecoverpasswordResponsibleComponent,
   },
@@ -72,7 +77,7 @@ const routes: Routes = [
     path: 'Profiles/RestaurantResponsibleProfile/restaurant-graph',
     component: RestaurantGraphComponent,
   },
-  { path: 'reservations', component: ReservationsComponent },
+  { path: 'reservations/:id', component: ReservationsComponent },
   { path: 'Restaurants/restaurants-page', component: RestaurantsPageComponent },
   {
     path: 'Restaurants/restaurants-preview/:id',

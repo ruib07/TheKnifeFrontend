@@ -29,7 +29,6 @@ export class ProfilesNavComponent implements OnInit {
       this.http.get(`http://localhost:3005/restaurantresponsibles/${this.getUserId()}`, { headers })
         .subscribe((res: any) => {
           this.responsavel = res;
-          console.log(res);
         }, (error) => {
           console.error('Erro ao obter dados do responsável: ', error);
         });
@@ -63,7 +62,6 @@ export class ProfilesNavComponent implements OnInit {
       this.http.get(`http://localhost:3005/users/${this.getutilizadorId()}`, { headers })
         .subscribe((res: any) => {
           this.user = res;
-          console.log(res);
         }, (error) => {
           console.error('Erro ao obter dados do utilizador: ', error);
         });
