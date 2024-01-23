@@ -1,6 +1,4 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import "@fontsource/work-sans";
-@import 'ngx-toastr/toastr';
 
 html, body {
   height: 100%;
