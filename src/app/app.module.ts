@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
+import { LOCALE_ID } from '@angular/core';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from 'src/components/home/home.component';
 import { RestaurantsPageComponent } from 'src/components/Restaurants/restaurants-page/restaurants-page.component';
@@ -83,7 +85,7 @@ import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover
     NgbModule,
     PaginationModule.forRoot(),
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

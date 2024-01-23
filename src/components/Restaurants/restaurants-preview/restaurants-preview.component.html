@@ -13,6 +13,12 @@
     <p>{{ restaurantData.location }}</p>
   </div>
   <div class="averageprice mt-4">
+    <p>Mesas: {{ restaurantData.numberoftables }}</p>
+  </div>
+  <div class="averageprice mt-4">
+    <p>Capacidade: {{ restaurantData.capacity }}</p>
+  </div>
+  <div class="averageprice mt-4">
     <p>Preço médio: {{ restaurantData.averageprice }}€</p>
   </div>
   <div class="openingdays">
@@ -29,4 +35,10 @@
   <div class="reservar-botao text-center">
     <button class="reservar" routerLink="/reservations">Reservar</button>
   </div>
+    		
+  <div class="calendario">
+	  <br><br>
+	  <ngb-datepicker #dp [(ngModel)]="selectedDate" [minDate]="minDate" (ngModelChange)="onDateChange($event)"></ngb-datepicker>
+  </div>
+  
 </div>

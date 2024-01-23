@@ -61,5 +61,49 @@
   cursor: pointer;
 }
 
+.calendario {
+    position: absolute;
+    top: 90%;
+    right: 8.52%; /* Ajuste a posição direita conforme necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  /* Estilos adicionais para o label se necessário */
+.calendario label {
+    margin-bottom: 18px; /* Espaçamento inferior entre o label e o calendário */
+}
+  
+  /* Estilo para os dias anteriores */
+.ngb-dp-day-disabled {
+    color: #999; /* Cor dos dias anteriores */
+    background-color: #eee; /* Cor de fundo dos dias anteriores */
+    cursor: not-allowed; /* Cursor indicando que o dia está desativado */
+}
 
+ngb-datepicker {
+  width: 700px;
+  background-color: white;
+
+  .ngb-dp-header {
+     width: 700px;
+      background-color: white;
+  }
+
+  select {
+      background-color: white;
+      color: black;
+      width: 300px;
+      text-align: center;
+  }
+
+  .ngb-dp-month {
+    width: 100%;
+}
+.ngb-dp-weekdays,
+.ngb-dp-week {
+    justify-content: space-evenly;
+}
+}
 

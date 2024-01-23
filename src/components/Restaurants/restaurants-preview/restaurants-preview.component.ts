@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, LOCALE_ID, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 @Component({
   selector: 'app-restaurants-preview',
@@ -8,17 +11,30 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./restaurants-preview.component.css']
 })
 export class RestaurantsPreviewComponent implements OnInit {
-
+  selectedDate: any;
   restaurantId: any = {};
   restaurantData: any;
+  minDate: any; 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { 
+    registerLocaleData(localePt, 'pt-BR'),
+    this.minDate = { year: new Date().getFullYear(), month: new Date().getMonth() + 1, day: new Date().getDate() };
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.restaurantId = +params['id'];
       this.getRestaurantInfo();
     });
+  }
+
+
+  onDateChange(date: any) {
+    console.log('Data selecionada:', date);
+  }
+
+  redirectToReservations() {
+    this.router.navigate(['/reservations']);
   }
 
   getRestaurantInfo() {
