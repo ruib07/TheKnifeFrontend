@@ -17,9 +17,6 @@ variables:
   STAGING_DOMAIN: theknife-staging.surge.sh
   PRODUCTION_DOMAIN: theknife-prod.surge.sh
 
-before_script:
-  - npm install -g @angular/cli
-
 build website:
   stage: build
   only:
@@ -28,6 +25,7 @@ build website:
   script:
     - echo $CI_COMMIT_SHORT_SHA
     - npm install
+    - npm install -g @angular/cli
     - ng build
   artifacts:
     paths:
@@ -49,6 +47,7 @@ test website:
     - merge_requests
   script:
     - npm install
+    - npm install -g @angular/cli
     - ng build
     - npm install -g http-server
     - http-server ./dist -p 4200 -s &
