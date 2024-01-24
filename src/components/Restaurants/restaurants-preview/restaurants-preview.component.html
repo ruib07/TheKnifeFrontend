@@ -61,7 +61,7 @@
   <div class="comment">{{ comment.comment }}</div>
 </div>
 
-<div class="reservar-botao text-center">
+<div class="reservar-botao text-center" *ngIf="restaurantComments.length > 0 && visibleComments !== 0">
   <button class="maisavaliacao" (click)="verComentarios()">Mais Avaliações</button>
 </div>
 

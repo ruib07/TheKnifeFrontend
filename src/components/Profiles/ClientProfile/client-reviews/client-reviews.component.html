@@ -10,6 +10,21 @@
             <div class="card-title">
               <h1>Avaliações</h1>
             </div>
+            <div *ngFor="let comment of pagedComments" class="avaliacao-card">
+              <div class="info">
+                <div class="review ms-4 mt-2">{{ comment.review }}</div>
+                <div class="date ms-4">{{ formatDate(comment.commentdate) }}</div>
+              </div>
+              <div class="comment ms-2">{{ comment.comment }}</div>
+            </div>
+            <div class="pagination">
+              <pagination
+                [(ngModel)]="p"
+                [totalItems]="commentsData.length"
+                [itemsPerPage]="3"
+                (pageChanged)="pageChanged($event)">
+              </pagination>
+            </div>
           </div>
         </div>
       </div>

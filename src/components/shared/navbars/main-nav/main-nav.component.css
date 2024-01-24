@@ -32,8 +32,9 @@ nav img {
   color: #000;
 }
 
-#mainNavbar.navbar-scroll img,
-#mainNavbar.navbar-scroll .material-icons {
+
+#mainNavbar.navbar-scroll .material-icons,
+.navbar-brand img {
   filter: invert(1);
 }
 

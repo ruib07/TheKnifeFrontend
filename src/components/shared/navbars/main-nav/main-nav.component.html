@@ -21,7 +21,7 @@
         routerLink="/home"
         [routerLinkActive]="'active'"
       >
-        <img src="../../../assets/logos/TheKnife-LogoDark.png" />
+        <img [src]="isScrolled ? '../../../assets/logos/TheKnife-LogoDark.png':'../../../assets/logos/TheKnife-LogoLight.png'" />
       </a>
     </div>
 

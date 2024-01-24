@@ -63,7 +63,7 @@
 
 .calendario {
   position: absolute;
-  top: 84%;
+  margin-top: -400px;
   right: 19.52%;
   display: flex;
   flex-direction: column;

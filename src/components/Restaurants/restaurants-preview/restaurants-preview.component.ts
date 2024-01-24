@@ -146,7 +146,7 @@ export class RestaurantsPreviewComponent implements OnInit {
           console.error('Erro ao obter comentários do restaurante: ', error);
         }
       );
-  }
+    }
 
   getUtilizador() {
     const usertoken = localStorage.getItem('usertoken');
