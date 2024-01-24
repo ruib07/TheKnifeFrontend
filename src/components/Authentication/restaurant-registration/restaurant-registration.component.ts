@@ -113,7 +113,6 @@ export class RestaurantRegistrationComponent {
             });
         },
         (error) => {
-          console.error(error);
           this.setStyle('1px solid #D00000');
           this.showError();
         }

@@ -72,7 +72,6 @@ export class RegisterComponent {
             });
         },
         (error) => {
-          console.error(error);
           this.showError();
         }
       );

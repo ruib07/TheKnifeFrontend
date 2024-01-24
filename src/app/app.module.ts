@@ -40,6 +40,7 @@ import { RecoverpasswordemailUserComponent } from 'src/components/Recover-Passwo
 import { RestaurantGraphComponent } from 'src/components/Profiles/RestaurantResponsibleProfile/restaurant-graph/restaurant-graph.component';
 import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav/profiles-nav.component';
 import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-responsavel/recoverpasswordemail-responsavel.component';
+import { RestaurantFavouritesComponent } from 'src/components/Profiles/ClientProfile/restaurant-favourites/restaurant-favourites.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover
     ClientEditprofileComponent,
     BookingHistoryComponent,
     ClientReviewsComponent,
+    RestaurantFavouritesComponent,
     ResponsibleEditprofileComponent,
     RestaurantEditprofileComponent,
     RestaurantGraphComponent,

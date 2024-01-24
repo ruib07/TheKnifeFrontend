@@ -63,7 +63,6 @@ export class LoginResponsiblesComponent {
           }
         },
         (error) => {
-          console.error('Erro ao efetuar login: ', error);
           this.setStyle('1px solid #D00000');
           this.showError();
         }

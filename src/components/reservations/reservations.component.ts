@@ -103,7 +103,6 @@ export class ReservationsComponent implements OnInit {
           }, 3000);
         },
         (error) => {
-          console.error(error);
           this.showError();
         }
       );

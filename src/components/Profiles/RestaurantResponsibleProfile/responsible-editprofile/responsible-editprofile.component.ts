@@ -101,7 +101,6 @@ export class ResponsibleEditprofileComponent implements OnInit {
             }, 3000);
           },
           (error) => {
-            console.error(error);
             this.setStyle('1px solid #D00000');
             this.showError();
           }

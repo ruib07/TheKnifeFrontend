@@ -67,7 +67,6 @@ export class RecoverpasswordResponsibleComponent {
           this.router.navigate(['/Authentication/login-responsibles']);
         },
         (error) => {
-          console.error('Erro ao efetuar a alteração de password: ', error);
           this.showError();
         }
       );

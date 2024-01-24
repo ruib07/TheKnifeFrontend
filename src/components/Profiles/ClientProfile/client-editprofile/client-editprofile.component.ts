@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-client-editprofile',
   templateUrl: './client-editprofile.component.html',
-  styleUrls: ['./client-editprofile.component.css']
+  styleUrls: ['./client-editprofile.component.css'],
 })
 export class ClientEditprofileComponent implements OnInit {
-
   constructor(
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private el: ElementRef  ) {}
+    private el: ElementRef
+  ) {}
 
   eyeIcon = faEye;
   eyeIconSlash = faEyeSlash;
@@ -56,17 +56,22 @@ export class ClientEditprofileComponent implements OnInit {
     const usertoken = localStorage.getItem('usertoken');
 
     if (usertoken) {
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${usertoken}`);
+      const headers = new HttpHeaders().set(
+        'Authorization',
+        `Bearer ${usertoken}`
+      );
 
       this.http
-        .get(`http://localhost:3005/users/${this.getUtilizadorId()}`, { headers })
+        .get(`http://localhost:3005/users/${this.getUtilizadorId()}`, {
+          headers,
+        })
         .subscribe(
           (res: any) => {
             this.user = {
               username: res.username,
               email: res.email,
               password: res.password,
-              image: res.image
+              image: res.image,
             };
           },
           (error) => {
@@ -85,7 +90,10 @@ export class ClientEditprofileComponent implements OnInit {
     const usertoken = localStorage.getItem('usertoken');
 
     if (usertoken) {
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${usertoken}`);
+      const headers = new HttpHeaders().set(
+        'Authorization',
+        `Bearer ${usertoken}`
+      );
 
       this.http
         .put(
@@ -114,14 +122,12 @@ export class ClientEditprofileComponent implements OnInit {
             this.showSuccess();
           },
           (error) => {
-            console.error(error);
             this.setStyle('1px solid #D00000');
             this.showError();
           }
         );
     }
   }
-
 
   getUtilizadorId() {
     const usertoken = localStorage.getItem('usertoken');
@@ -137,9 +143,11 @@ export class ClientEditprofileComponent implements OnInit {
   }
 
   private setStyle(style: string) {
-    const usernameInput = this.el.nativeElement.querySelector('[name="username"]');
+    const usernameInput =
+      this.el.nativeElement.querySelector('[name="username"]');
     const emailInput = this.el.nativeElement.querySelector('[name="email"]');
-    const passwordInput = this.el.nativeElement.querySelector('[name="password"]');
+    const passwordInput =
+      this.el.nativeElement.querySelector('[name="password"]');
     const imageInput = this.el.nativeElement.querySelector('[name="image"]');
 
     if (usernameInput) {

@@ -117,7 +117,6 @@ export class RestaurantEditprofileComponent implements OnInit {
             }, 3000);
           },
           (error) => {
-            console.error('Erro ao atualizar restaurante:', error);
             this.setStyle('1px solid #D00000');
             this.showError();
           }

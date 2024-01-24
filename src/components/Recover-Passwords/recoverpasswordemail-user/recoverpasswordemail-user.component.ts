@@ -6,13 +6,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-recoverpasswordemail-user',
   templateUrl: './recoverpasswordemail-user.component.html',
-  styleUrls: ['./recoverpasswordemail-user.component.css']
+  styleUrls: ['./recoverpasswordemail-user.component.css'],
 })
 export class RecoverpasswordemailUserComponent {
+  existingEmail: string = ''; // Initialize the property
 
-  existingEmail: string = '';  // Initialize the property
-
-  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
+  constructor(
+    private http: HttpClient,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
   showSuccess() {
     this.toastr.success('Email confirmado com sucesso!', 'Sucesso', {
@@ -33,22 +36,23 @@ export class RecoverpasswordemailUserComponent {
   }
 
   getRecoverPasswordemailUser() {
-    const url = 'http://localhost:3005/registerusers/confirm-email/' + this.existingEmail;
+    const url =
+      'http://localhost:3005/registerusers/confirm-email/' + this.existingEmail;
 
-    this.http.get(url)
-      .subscribe(
-        (res: any) => {
-          if (res.message) {
-            this.showSuccess();
-            this.router.navigate(['/Recover-Passwords/recoverpassword-user'], { queryParams: { email: this.existingEmail } });
-          } else {
-            this.showError();
-          }
-        },
-        (error) => {
-          console.error(error);
+    this.http.get(url).subscribe(
+      (res: any) => {
+        if (res.message) {
+          this.showSuccess();
+          this.router.navigate(['/Recover-Passwords/recoverpassword-user'], {
+            queryParams: { email: this.existingEmail },
+          });
+        } else {
           this.showError();
         }
-      );
+      },
+      (error) => {
+        this.showError();
+      }
+    );
   }
 }

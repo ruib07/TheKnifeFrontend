@@ -74,7 +74,6 @@ export class RecoverpasswordUserComponent implements OnInit {
           this.router.navigate(['/Authentication/login']);
         },
         (error) => {
-          console.error('Erro ao efetuar a alteração de password: ', error);
           this.showError();
         }
       );

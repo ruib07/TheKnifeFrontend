@@ -1,9 +1,7 @@
 .footer {
-  padding: 51px!important;
-  display: inline-flex;
+  padding: 20px;
   background-color: #1B1B1B;
   color: #fff;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;

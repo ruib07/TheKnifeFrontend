@@ -55,7 +55,6 @@ export class RecoverpasswordemailResponsavelComponent {
         }
       },
       (error) => {
-        console.error(error);
         this.showError();
       }
     );

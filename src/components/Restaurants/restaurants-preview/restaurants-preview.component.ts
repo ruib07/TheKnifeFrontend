@@ -83,16 +83,18 @@ export class RestaurantsPreviewComponent implements OnInit {
   getRestaurantInfo() {
     this.http.get('http://localhost:3005/restaurants').subscribe(
       (res: any) => {
-        console.log('Response from server:', res);        
-        
-        const selectedRestaurant = res.find((restaurant:any) => restaurant.id === this.restaurantId);       
-         
+        const selectedRestaurant = res.find(
+          (restaurant: any) => restaurant.id === this.restaurantId
+        );
+
         if (selectedRestaurant) {
           this.restaurantData = selectedRestaurant;
-          console.log('Restaurant data:', this.restaurantData);
           this.getRestaurantComments();
         } else {
-          console.error('Restaurante não encontrado. Restaurant ID:', this.restaurantId);
+          console.error(
+            'Restaurante não encontrado. Restaurant ID:',
+            this.restaurantId
+          );
         }
       },
       (error) => {
@@ -120,14 +122,12 @@ export class RestaurantsPreviewComponent implements OnInit {
 
     this.http.post('http://localhost:3005/comments', commentsToSend).subscribe(
       (res: any) => {
-        console.log(res);
         this.showSuccess();
         setTimeout(() => {
           window.location.reload();
         }, 3000);
       },
       (error) => {
-        console.error(error);
         this.showError();
       }
     );
@@ -141,7 +141,6 @@ export class RestaurantsPreviewComponent implements OnInit {
           this.restaurantComments = res.filter(
             (comment: any) => comment.restaurant_id === this.restaurantId
           );
-          console.log('Restaurant comments:', this.restaurantComments);
         },
         (error) => {
           console.error('Erro ao obter comentários do restaurante: ', error);
@@ -165,7 +164,6 @@ export class RestaurantsPreviewComponent implements OnInit {
         .subscribe(
           (res: any) => {
             this.user = res;
-            console.log(res);
           },
           (error) => {
             console.error('Erro ao obter dados do utilizador: ', error);
