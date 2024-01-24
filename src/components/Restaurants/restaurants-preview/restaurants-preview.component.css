@@ -63,8 +63,8 @@
 
 .calendario {
   position: absolute;
-  top: 74%;
-  right: 29.52%;
+  top: 84%;
+  right: 19.52%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

@@ -74,6 +74,15 @@ export class ReservationsComponent implements OnInit {
     reservationtime: string;
     numberpeople: number;
   }) {
+    if (
+      reservation.numberpeople > this.restaurantData.capacity ||
+      reservation.reservationtime < this.restaurantData.openinghours ||
+      reservation.reservationtime > this.restaurantData.closinghours
+    ) {
+      this.showError();
+      return;
+    }
+
     const reservationToSend = {
       client_name: reservation.client_name,
       phonenumber: reservation.phonenumber,

@@ -7,11 +7,14 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-
-  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
+  constructor(
+    private http: HttpClient,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
   eyeIcon = faEye;
   eyeIconSlash = faEyeSlash;
@@ -19,7 +22,7 @@ export class RegisterComponent {
   changetype: boolean = true;
 
   showSuccess() {
-    this.toastr.success('Login Efetuado com sucesso!', 'Sucesso', {
+    this.toastr.success('Registo Efetuado com sucesso!', 'Sucesso', {
       progressBar: true,
       closeButton: true,
       positionClass: 'toast-bottom-right',
@@ -28,7 +31,7 @@ export class RegisterComponent {
   }
 
   showError() {
-    this.toastr.error('Login não foi efetuado!', 'Erro', {
+    this.toastr.error('Registo não foi efetuado!', 'Erro', {
       progressBar: true,
       closeButton: true,
       positionClass: 'toast-bottom-right',
@@ -41,26 +44,37 @@ export class RegisterComponent {
     this.changetype = !this.changetype;
   }
 
-  RegisterUsers(registerusers: { username: string, email: string, password: string }) {
-    this.http.post('http://localhost:3005/registerusers', registerusers)
-      .subscribe((res: any) => {
-        const userDataForUsersTable = {
-          username: registerusers.username,
-          email: registerusers.email,
-          password: registerusers.password,
-          image: null,
-          registeruser_id: res.id
-        };
+  RegisterUsers(registerusers: {
+    username: string;
+    email: string;
+    password: string;
+  }) {
+    this.http
+      .post('http://localhost:3005/registerusers', registerusers)
+      .subscribe(
+        (res: any) => {
+          const userDataForUsersTable = {
+            username: registerusers.username,
+            email: registerusers.email,
+            password: registerusers.password,
+            image: null,
+            registeruser_id: res.id,
+          };
 
-        this.http.post('http://localhost:3005/auths/usersignup', userDataForUsersTable)
-          .subscribe((userRes) => {
-            this.showSuccess();
-            this.router.navigate(['/Authentication/login/']);
-          });
-      },
+          this.http
+            .post(
+              'http://localhost:3005/auths/usersignup',
+              userDataForUsersTable
+            )
+            .subscribe((userRes) => {
+              this.showSuccess();
+              this.router.navigate(['/Authentication/login/']);
+            });
+        },
         (error) => {
           console.error(error);
           this.showError();
-      });
+        }
+      );
   }
 }
