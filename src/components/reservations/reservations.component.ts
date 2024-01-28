@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -17,7 +17,8 @@ export class ReservationsComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -29,7 +30,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Reserva efetuado com sucesso!', 'Sucesso', {
+    this.toastr.success('Reserva efetuada com sucesso!', 'Sucesso', {
       progressBar: true,
       closeButton: true,
       positionClass: 'toast-bottom-right',
@@ -98,9 +99,7 @@ export class ReservationsComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.showSuccess();
-          setTimeout(() => {
-            window.location.reload();
-          }, 3000);
+          this.router.navigate(['/home']);
         },
         (error) => {
           this.showError();

@@ -42,6 +42,9 @@ import { ProfilesNavComponent } from 'src/components/shared/navbars/profiles-nav
 import { RecoverpasswordemailResponsavelComponent } from 'src/components/Recover-Passwords/recoverpasswordemail-responsavel/recoverpasswordemail-responsavel.component';
 import { RestaurantFavouritesComponent } from 'src/components/Profiles/ClientProfile/restaurant-favourites/restaurant-favourites.component';
 
+import { DeleteCommentModalComponent } from 'src/components/Modals/DeleteCommentModal/DeleteCommentModal.component';
+import { DeleteReservationModalComponent } from 'src/components/Modals/DeleteReservationModal/DeleteReservationModal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +73,8 @@ import { RestaurantFavouritesComponent } from 'src/components/Profiles/ClientPro
     RecoverpasswordemailUserComponent,
     RecoverpasswordemailResponsavelComponent,
     FooterComponent,
+    DeleteCommentModalComponent,
+    DeleteReservationModalComponent,
   ],
   imports: [
     BrowserModule,

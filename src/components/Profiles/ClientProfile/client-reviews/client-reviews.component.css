@@ -29,6 +29,12 @@
   flex-direction: column;
 }
 
+.icon {
+  margin-top: -20px;
+  float: right;
+  cursor: pointer;
+}
+
 .card-title {
   font-weight: bold;
   font-size: 18px;

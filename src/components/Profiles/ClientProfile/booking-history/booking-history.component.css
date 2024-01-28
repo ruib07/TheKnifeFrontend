@@ -48,6 +48,10 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
+.icon {
+  cursor: pointer;
+}
+
 .pagination {
   margin-top: 20px;
   display: flex;

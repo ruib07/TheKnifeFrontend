@@ -2,6 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { DeleteReservationModalComponent } from 'src/components/Modals/DeleteReservationModal/DeleteReservationModal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-booking-history',
@@ -18,11 +21,34 @@ export class BookingHistoryComponent implements OnInit {
   p: number = 1;
   pagedReservations: any[] = [];
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private modalService: NgbModal,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.getUtilizador();
     this.getReservationInfo();
+  }
+
+  showSuccess() {
+    this.toastr.success('Reserva removida com sucesso!', 'Sucesso', {
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      timeOut: 5000,
+    });
+  }
+
+  showError() {
+    this.toastr.error('Erro a remover a reserva', 'Erro', {
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      timeOut: 5000,
+    });
   }
 
   formatDate(date: string): string {
@@ -73,6 +99,45 @@ export class BookingHistoryComponent implements OnInit {
         console.error('Erro ao obter reservas: ', error);
       }
     );
+  }
+
+  openDeleteConfirmationModal(comment: any): void {
+    const modalRef = this.modalService.open(DeleteReservationModalComponent);
+    modalRef.componentInstance.comment = comment;
+    modalRef.result.then((result) => {
+      if (result === 'delete') {
+        this.confirmDelete(comment);
+      }
+    });
+  }
+
+  confirmDelete(reservation: any): void {
+    const usertoken = localStorage.getItem('usertoken');
+
+    if (usertoken) {
+      const headers = new HttpHeaders().set(
+        'Authorization',
+        `Bearer ${usertoken}`
+      );
+
+      this.http
+        .delete(`http://localhost:3005/reservations/${reservation.id}`, {
+          headers,
+        })
+        .subscribe(
+          () => {
+            this.reservationData = this.reservationData.filter(
+              (r: any) => r.id !== reservation.id
+            );
+
+            this.pageChanged({ page: this.p });
+            this.showSuccess();
+          },
+          (error) => {
+            this.showError();
+          }
+        );
+    }
   }
 
   getUtilizador() {
